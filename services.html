@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ES parlour</title>
+    <link rel="stylesheet" href="style.css">
+     <script src="https://kit.fontawesome.com/67333c175b.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  <section class="header">
+<nav class="navbar">
+  <!-- Logo Container -->
+  <div class="logo-area">
+    <img src="E S Bloom logo.jpeg" width="50px" height="50px" alt="E S Bloom Logo">
+  </div>
+<div>
+  <!-- Mobile Hamburger Button -->
+  <button class="menu-toggle" id="menuToggle" aria-label="Open Navigation Menu">
+    <span class="bar"></span>
+    <span class="bar"></span>
+    <span class="bar"></span>
+  </button>
+  </div>
+
+  <!-- Navigation Links -->
+  <div class="links" id="navLinks">
+    <p><a href="index.html" class="active">Home</a></p>
+    <p><a href="about.html">About us</a></p>
+    <p><a href="services.html">services</a></p>
+    <p><a href="contacts.html">contact now</a></p>
+  </div>
+</nav>
+<style>
+  /* --- Global Reset & Base Navbar Style --- */
+
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #ffffff;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  position: relative;
+  z-index: 1000;
+  gap: 410px;
+}
+
+/* --- Mobile Menu Toggle Button (Hamburger) --- */
+.menu-toggle {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 25px;
+  height: 20px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.menu-toggle .bar {
+  width: 100%;
+  height: 3px;
+  background-color: #333333; /* Color of your choice */
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+/* --- Mobile view Layout (Under 768px Screen Width) --- */
+@media (max-width: 767px) {
+  .links {
+    display: none; /* Initially hidden on mobile screen */
+    flex-direction: column;
+    width: 100%;
+    position:absolute;
+    top: 100%; /* Sits exactly below the main navigation bar header */
+    left: 5px;
+    background-color: #a01474;
+    box-shadow:  rgba(0, 0, 0, 0.08);
+  
+  }
+  .navbar{
+    gap: 350px;
+  }
+
+  /* Target paragraphs inside the mobile drop menu */
+  .links p {
+    margin: 0;
+    width: 100%;
+  }
+
+  .links a {
+    display: block;
+    padding: 15px 25px;
+    text-decoration: none;
+    color: white;
+    border-bottom: 1px solid #f5f5f5;
+    text-align: center;
+  }
+
+  
+  /* The active toggle state that displays the menu */
+  .links.show {
+    display: flex;
+  }
+
+  /* Optional: Animation transforms hamburger lines into an 'X' close graphic */
+  .menu-toggle.open .bar:nth-child(1) {
+    transform: translateY(8.5px) rotate(45deg);
+  }
+  .menu-toggle.open .bar:nth-child(2) {
+    opacity: 0;
+  }
+  .menu-toggle.open .bar:nth-child(3) {
+    transform: translateY(-8.5px) rotate(-45deg);
+  }
+}
+
+/* --- Laptop / Desktop Responsive Layout (768px and up) --- */
+@media (min-width: 768px) {
+  .menu-toggle {
+    display: none; /* Hide the burger toggle on desktop screens */
+  }
+
+  .links {
+    display: flex !important; /* Forces link container horizontal flex display */
+    flex-direction: row;
+    gap: 20px;
+  }
+
+  .links p {
+    margin: 0;
+  }
+
+  .links a {
+    text-decoration: none;
+    color: #333333;
+  }
+}
+
+</style>
+ </section>
+       <header class="menu-header" style="background-color: #f5f5f549;">
+  <div class="header-container">
+    <h1 class="menu-title">Our Menu of <span class="accent-text">Indulgence</span></h1>
+    <p class="menu-description" style="color: black; font-size: large;">Every service begins with a complimentary consultation. Select a category below to explore our signature treatments, premium products, and transparent pricing.</p>
+  </div>
+</header>
+<style>
+    /* Container Background & Layout */
+.menu-header {
+  background-color: rgba(139, 119, 131, 0.116); /* Rich Purple Vibe */
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.header-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Typography Rules */
+.menu-title {
+  color: #ffffff; /* Base text changes to White so it stands out against purple */
+  font-size: 2.5rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  margin: 0 0 15px 0;
+  text-transform: capitalize;
+}
+
+/* The word "Indulgence" highlights beautifully */
+.accent-text {
+  color: #d12c92; /* Warm luxury gold or premium contrast cream color */
+  font-style: italic;
+}
+
+.menu-description {
+  color: #f5f5f5; /* Clean light gray/off-white for excellent text readability */
+  font-size: 1.05rem;
+  line-height: 1.6;
+  margin: 0;
+}
+
+</style>
+<style>
+    /* --- Base Container Rules --- */
+.service-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* --- Category Header Styling --- */
+.service-card-1 {
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.service-card-1 h1 {
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.service-card-1 p {
+    font-size: 1.05rem;
+    color: #555555;
+    line-height: 1.6;
+}
+
+/* --- Flexbox Card Row Layout --- */
+.cards {
+    display: flex;
+    justify-content: space-between;
+    gap: 25px; /* Clean gap spacing instead of breaking layouts */
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* --- Individual Card Formatting --- */
+.card-1-img {
+    flex: 1; /* Distributes space equally among the 3 cards */
+    min-width: 0; /* Prevents card blocks from expanding beyond boundaries */
+    background: #ffffff;
+    padding: 15px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centers text underneath images */
+    text-align: center;
+}
+
+/* --- Responsive Images Configuration --- */
+.card-1-img .imgs {
+    width: 100%; /* Overrides the inline width="200" to match layout size */
+    max-width: 250px; /* Keeps the square from getting aggressively huge */
+    height: auto;
+    aspect-ratio: 1 / 1; /* Enforces an un-distorted square shape */
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 12px;
+}
+
+.card-1-img h5 {
+    font-size: 1.05rem;
+    color: #222222;
+    margin-top: 5px;
+    font-weight: 600;
+}
+
+/* --- Responsive Screen Breakpoint (Mobile / Tablets) --- */
+@media (max-width: 768px) {
+    .cards {
+        flex-direction: column; /* Force-collapses cards into a vertical stack */
+        gap: 20px; /* Adjusts grid spacing vertically */
+    }
+
+    .service-card-1 {
+        text-align: center; /* Centers alignment for clean smartphone styling */
+    }
+
+    .service-card-1 h1 {
+        font-size: 1.8rem; /* Drops heading scale safely down for mobile screen limits */
+    }
+
+    .card-1-img {
+        width: 100%;
+        padding: 20px;
+    }
+
+    .card-1-img .imgs {
+        max-width: 200px; /* Keeps image sizing perfectly compact on mobile displays */
+    }
+}
+
+</style>
+        <section class="service-list" style=" background-color: #f5f5f549">
+            <div class="service-container">
+                <!--card-1-->
+                <div class="service-card-1">
+                    <h1 style="color:rgb(140, 2, 87)  ;">Fresh Tips <span style="color: black;">&</span> <span style="color: white;">Fresh Vibes</span></h1>
+                    <p style="color: black; font-size: 1.2rem;"> Experience premium nail artistry, flawless gel extensions, and pampering care designed to make you shine from tip to toe.</p>
+                </div><br><br>
+                    <div class="cards">
+                    <div class="card-1-img">
+                        <img class="imgs" src="data:image/jpeg;base64,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" width="200" height="200">
+                        <h5>Classic & Gel manicures</h5>
+                    </div>
+                    <div class="card-1-img">
+                        <img class="imgs" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRj8Br5weCUyaltJokMiiuZpfRxZ79VB-tbaFoS0j2fZA&s" width="200" height="200">
+                        <h5>Nail Extensions</h5>
+                
+                    </div>
+                    <div class="card-1-img">
+                        <img class="imgs" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTMf9osU6s0p4Gu80IzJ9Vvv_lxmslGlFxFET7aATtidw&s=10" width="200" height="200">
+                        <h5>Nail Arts</h5>
+                    </div>
+                    </div><br><br>
+                    <!--card-2-->
+                     <div class="service-card-1">
+                     <h1 style="color:rgb(140, 2, 87)  ;">Crown of Beauty <span style="color: black;">&</span> <span style="color: white;">Timeless Glamour</span></h1>
+                    <p  style="color: black; font-size: 1.2rem;">Step into your fairytale with breathtaking bridal transformations customized to honor your style. From glowing reception looks to classic wedding glamour, our master artists craft long-lasting.</p>
+                </div><br><br>
+                    <div class="cards">
+                    <div class="card-1-img">
+                        <img class="imgs" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1mXT39sMV6tTZDl4aZI3dyBt3mfVN4N5CYZSbLy975w&s=10" width="200" height="200">
+                        <h5>HD Makeup</h5>
+                        
+                    </div>
+                    <div class="card-1-img">
+                        <img class="imgs" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTvibAugPpCER45PtpuoFUHC6RrjBqQuM2adY_i0eSviw&s=10"width="200" height="200">
+                        <h5>Water Proof Makeup</h5>
+                        
+                    </div>
+                    <div class="card-1-img">
+                        <img class="imgs" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQYocBR2mDO121ZDzRG9rmXNkDoUpYWCwlI_hQ59C98lg&s=10" width="200" height="200">
+                        <h5>Skin Finish Makeup</h5>
+            
+                    </div>
+                    </div><br><br>
+                    <!--card-3-->
+                     <div class="service-card-1">
+                    <h1 style="color:rgb(140, 2, 87)  ;">Intricate Strains <span style="color: black;">&</span> <span style="color: white;">Heritage Art</span></h1>
+                    <p style="color: black; font-size: 1.2rem;">Celebrate your milestone moments with exquisite, handcrafted Mehendi artistry. Our designs blend complex traditional motifs with sleek contemporary patterns.</p>
+                </div><br><br>
+                    <div class="cards">
+                    <div class="card-1-img">
+                        <img class="imgs" src="https://www.shaadidukaan.com/vogue/wp-content/uploads/2025/12/Including-Your-Wedding-Date-Name-in-Mehndi-Design-1.jpg" width="200" height="200">
+                        <h5>Bridal Mehendis</h5>
+                    </div>
+                    <div class="card-1-img">
+                        <img class="imgs" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTmZfjXZFcbzdg_ti6flLU9B-jTNNarAdAWRjLympADTQ&s=10" width="200" height="200">
+                        <h5>Indo-Arabic Mehendis</h5>
+                    </div>
+                    <div class="card-1-img">
+                        <img class="imgs" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQSZiepPCTvilecvI3pW0n5JeHHVV7E_OWqc9Odi3F51w&s" width="200" height="200">
+                        <h5>Floral Mehendis</h5>
+                    </div>
+                    </div><br><br>
+                    <!--card-4-->
+                     <div class="service-card-1">
+                    <h1 style="color:rgb(140, 2, 87)  ;">Bespoke Threads <span style="color: black;">&</span> <span style="color: white;">Curated Fashion</span></h1>
+                    <p style="color: black; font-size: 1.2rem;">Discover an exclusive collection where luxury fashion meets personalized craftsmanship. From signature ethnic wear to premium, tailor-made silhouettes.</p>
+                </div><br><br>
+                    <div class="cards">
+                    <div class="card-1-img">
+                        <img class="imgs" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT3PrGBSRvsKAYcojnuSq7y1FXJCYhqWEJBBKzLngut4A&s=10" width="200" height="200">
+                        <h5>Casual Wears</h5>
+                        
+                    </div>
+                    <div class="card-1-img">
+                        <img class="imgs" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQF-8yzoZj1z_FwYaKg9boC_rnw1DzayQYSXqFZzuDBeQ&s=10" width="200" height="200">
+                        <h5>Festive Wears</h5>
+                    </div>
+                    <div class="card-1-img">
+                        <img class="imgs" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTIcK075-9SiMRhTZyoZ8S7xBpPY4FGoYtV82QAj6rJTQ&s=10" width="200" height="200">
+                        <h5>Kurtis</h5>
+                    </div>
+                    </div><br><br>
+                      <!--card-5-->
+                     <div class="service-card-1">
+                    <h1 style="color:rgb(140, 2, 87)  ;">Radiant Science <span style="color: black;">&</span> <span style="color: white;">Restorative Facials</span></h1>
+                    <p style="color: black; font-size: 1.2rem;">We blend clinical science with deeply relaxing rituals to target your specific skin concerns, utilizing only dermatologically tested, premium formulas.</p>
+                </div><br><br>
+                    <div class="cards">
+                    <div class="card-1-img">
+                        <img class="imgs" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSJpdEJiS8gYv_YTbPEE8X3K5skXr5wnN7wTK8Drf-Aqg&s=10" width="200" height="200">
+                        <h5> signature glow facial</h5>
+    
+                    </div>
+                    <div class="card-1-img">
+                        <img class="imgs" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTmePu9XSO24fMmja-kKElNb_QhYRW9DVCI9VupxKeyWA&s=10" width="200" height="200">
+                        <h5>Advanced Hydro-Dermabrasion</h5>
+                        
+                    </div>
+                    <div class="card-1-img">
+                        <img class="imgs" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSJpdEJiS8gYv_YTbPEE8X3K5skXr5wnN7wTK8Drf-Aqg&s=10" width="200" height="200">
+                        <h5>Organic Chemical Peel</h5>
+                    
+                    </div>
+                    </div><br><br>
+                      <!--card-6-->
+                     <div class="service-card-1">
+                    <h1 style="color:rgb(140, 2, 87)  ;">Hair Couture <span style="color: black;">&</span> <span style="color: white;">Restorative Luxury</span></h1>
+                    <p>From cutting-edge precision cuts to intensely hydrating botanical therapies, we breathe life back into your tresses. Our elite stylists treat everything from crown damage to customized color extensions.</p>
+                </div><br><br>
+                    <div class="cards">
+                    <div class="card-1-img">
+                        <img class="imgs" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQiwQ_yexGRAb89Eu7m4Tis12lRi8MHokzXw0jOxGVWmw&s=10" width="200" height="200">
+                        <h5>Hair cut</h5>
+                        
+                    </div>
+                    <div class="card-1-img">
+                        <img class="imgs" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQFtehYUM_GhhS239IeBOZfNtt7npXRzHxRiam0pjDnkw&s=10" width="200" height="200">
+                        <h5>Hair Treatments</h5>
+                    
+                    </div>
+                    <div class="card-1-img">
+                        <img class="imgs" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRfXngtCm0EhJtRDKWmybl4aKqSCg4sQ5nWcfD-KJImQA&s=10" width="200" height="200">
+                        <h5>Hair Styling</h5>
+                    
+                    </div>
+                    </div><br><br>
+            </div>
+        </section>
+        <section class="cta">
+    <div class="cta-contents" style=" background:#ffffff27 ">
+        <center>
+        <h1 style="color: rgb(140, 2, 87);">Ready To <span style="color:white;">Reserve</span> Your Chair?</h1><br><br>
+        <p style="font-size: 20px;">Appointments fill up quickly. Secure your preferred date and time</p>
+        <p style="font-size: 20px;">bycall us directly to plan your personalized escape.</p><br>
+        <button style="background-color:rgb(140, 2, 87) ; color: white ; padding: 10px; border-radius: 10px;">Book Your Appointment Now<i class="fa-brands fa-viber"></i></button>
+       </center>
+    </div><br>
+    </section>
+  <footer class="site-footer" style="background-color: white;">
+  <!-- Brand and Value Propositions -->
+  <div class="footer-top">
+    <div class="footer-brand">
+      <img src="E S Bloom logo.jpeg" width="50px" height="50px" style="border-radius: 5px;">
+      <p>Nurturing your natural beauty with clean, modern wellness therapies.</p>
+    </div>
+    <div class="footer-features">
+      <div class="feature-item">
+        <i class="fa-brands fa-pagelines" style="color: #449221;"></i>
+        <span>NATURE FOCUSED</span>
+      </div><br>
+      <div class="feature-item">
+        <i class="fa-solid fa-wand-magic-sparkles" style="color: orange;"></i>
+        <span>MODERN WELLNESS</span>
+      </div><br>
+      <div class="feature-item">
+        <i class="fa-solid fa-microscope" style="color: rgb(76, 76, 209);"></i>
+        <span>CLEAN & ORGANIC</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Footer Content Grid -->
+  <div class="footer-sections">
+    <!-- Quick Links -->
+    <div class="footer-links">
+      <h3>Quick Links</h3>
+      <ul>
+        <li><a href="#" class="active">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="contacts.html">Contact Now</a></li>
+      </ul>
+    </div>
+
+    <!-- Expertise/Services -->
+    <div class="footer-links">
+      <h3>Our Expertise</h3>
+      <ul>
+        <li><a href="services.html#bridal">Bridal Makeup</a></li>
+        <li><a href="services.html#facials">Facials</a></li>
+        <li><a href="services.html#hair">Hair Spa</a></li>
+        <li><a href="services.html#oil">Boutique</a></li>
+      </ul>
+    </div>
+
+    <!-- Contact Details & Hours -->
+    <div class="footer-links contact-info">
+      <h3>Contact Us</h3>
+      <ul>
+        <li><i class="fa-solid fa-location-dot"></i> 123 Wellness Blvd, Suite 100</li>
+        <li><i class="fa-solid fa-phone"></i> +1 (555) 019-2834</li>
+        <li><i class="fa-solid fa-envelope"></i> hello@esbloom.com</li>
+      </ul>
+      </div>
+      <div>
+      <h3 class="hours-title">Hours</h3>
+      <p class="hours-text">Mon - Sat: 9:00 AM - 7:00 PM<br>Sun: Closed</p>
+    </div>
+
+   
+
+  <!-- Footer Bottom -->
+  <div class="footer-bottom">
+    <div class="footer-legal">
+      <p><i class="fa-regular fa-copyright"></i> All Rights Reserved @2026 E S BLOOM</p>
+      <div class="legal-links">
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="terms.html">Terms of Service</a>
+      </div>
+    </div>
+    <div class="footer-socials">
+      <a href="https://instagram.com" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+      <a href="https://facebook.com" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a>
+      <a href="https://twitter.com" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
+      <a href="https://linkedin.com" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+    </div>
+  </div>
+</footer>
+      <script>
+    document.addEventListener("DOMContentLoaded", function() {
+  const menuToggle = document.getElementById("menuToggle");
+  const navLinks = document.getElementById("navLinks");
+
+  menuToggle.addEventListener("click", function() {
+    // Toggles the visibility of the link wrapper element
+    navLinks.classList.toggle("show");
+    
+    // Toggles the modern 'X' close visual transition on the icon lines
+    menuToggle.classList.toggle("open");
+  });
+});
+</script>
+    
+ </body>
+ </html>

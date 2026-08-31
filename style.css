@@ -1,0 +1,930 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Georgia', serif;
+    color: black;
+    line-height: 1.6;
+    overflow-x: hidden;
+    background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTFPYws55bIbBmRYVU4xX9JEW0UtakqcujOFkhYsBdBDg&s=10);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+}
+/* splash screen*/
+#splash-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color:white; /* Match your video background */
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: opacity 0.8s ease, visibility 0.8s ease;
+}
+
+#splash-video {
+  width: 500px;
+  height: 500px;
+  object-fit: contain;
+}
+
+/* Hide splash screen when video ends */
+#splash-screen.hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px;
+    background: #ffffff;
+    border-bottom: 1px solid #f0f0f0;
+    border-radius: 3px;
+}
+.header{
+     opacity: 0; /* Keeps elements hidden until animation begins */
+  animation-name: fadeInDown;
+  animation-duration: 2s;
+  animation-timing-function: cubic-bezier(0.25, 1, 0.5, 1); /* Smooth deceleration */
+  animation-fill-mode: forwards; /* Keeps the final state (opacity: 1) active */
+  animation-delay: 0.2s;
+}
+@keyframes fadeInDown{
+    from {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+ .logo-area{
+  display: flex;
+  flex-wrap: wrap;
+ }
+ .links{
+  display:flex;
+  column-gap: 15px;
+ }
+.links a{
+  display: inline;
+  text-decoration: none;
+  color: black;
+}
+.hero-section{
+  display: flex;
+  padding-left: 30px;
+  padding: 30px;
+  justify-content: space-between;
+}
+.tagh1{
+  opacity: 0;
+  animation-name: slidein;
+  animation-delay: 0.2s;
+  animation-duration: 3s;
+  animation-fill-mode: forwards;
+}
+@keyframes slidein{
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  
+}
+.tagh2{
+  opacity: 0;
+  animation-name: slidein;
+  animation-delay: 0.6;
+  animation-duration: 3s;
+  animation-fill-mode: forwards;
+
+}
+.tagp{
+   opacity: 0;
+  animation-name: slidein;
+  animation-delay: 0.8s;
+  animation-duration: 3s;
+  animation-fill-mode: forwards;
+
+
+}
+.tagbutton{
+  padding-left: 80px;
+  opacity: 0;
+  animation-name: slidein;
+  animation-delay: 1s;
+  animation-duration: 3s;
+  animation-fill-mode: forwards;
+
+  
+}
+.card-container { 
+  perspective: 1000px; 
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  gap: 20px;
+} 
+
+.card-1 { 
+  /* Removed padding-left to fix alignment and rotation axis */
+ justify-content: space-evenly;/* Use margin instead if you need spacing */
+  position: relative; 
+  width: 200px; 
+  height: 300px; 
+  transform-style: preserve-3d; 
+  transition: transform 0.6s ease-in-out; 
+  align-items: center;
+} 
+
+.card-front-1,.card-front-2,.card-front-3,.card-front-4, .card-back-1 { 
+  position: absolute; 
+  width: 100%; 
+  height: 100%; 
+  border-radius: 8px; 
+  backface-visibility: hidden; 
+} 
+
+.card-front-1 { 
+  background-image:url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR_6p5-xqffBV3WIWsoDIkjFDoYrcOhEN6vtXwXfs31Jw&s=10);
+  background-size: cover;
+  display: flex; 
+  justify-content: center; 
+  align-items:end; 
+  transform: rotateY(0deg); /* Changed from rotateX to rotateY */
+} 
+.card-front-2{
+  background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcROriYt2jsHT3VfOoPcJsychajyC7XJ5cuaI7SN6pvMTA&s=10);
+  background-size: cover;
+  display: flex; 
+  justify-content: center; 
+  align-items: end; 
+  transform: rotateY(0deg); 
+
+}
+.card-front-3{
+  background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQy5pYQ0zpNrWsY91MvCWFX7n2I64OxzyBhU8mHlaSfiw&s=10); 
+   background-size: cover;
+  display: flex; 
+  justify-content: center; 
+  align-items: end; 
+  transform: rotateY(0deg); 
+}
+.card-front-4{
+  background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRUQMfUVDyd4Wp6OvP96WOxoOUlDIIqwg7GORJ799WFJQ&s=10);
+  background-size: cover;
+  display: flex; 
+  justify-content: center; 
+  align-items: end; 
+  transform: rotateY(0deg); 
+}
+
+.card-back-1 { 
+  background-color:  #b80e63; 
+  display: flex; 
+  justify-content: center; 
+  align-items: center; 
+  transform: rotateY(180deg); 
+} 
+
+.card-1:hover { 
+  transform: rotateY(180deg); 
+}
+
+
+/* Master Layout Block Wrapper */
+.welcome-section {
+    width: 100%;
+    padding: 100px 4%; /* Responsive 80px-100px top/bottom air and fluid side breathability */
+    display: flex;
+    justify-content: center;
+    background-color:#fcf9f660; /* Elegant soft cream backdrop background */
+}
+
+.welcome-container {
+    max-width: 1200px;
+    width: 100%;
+    display: flex;
+    align-items: center; /* Vertically aligns image and text perfectly center */
+    gap: 80px; /* Space cushion gap separating the two columns */
+}
+
+/* --- COLUMN 1: TYPOGRAPHY BRAND CONTENT --- */
+.welcome-text-block {
+    flex: 1; /* Occupies exactly 50% split space area */
+    display: flex;
+    flex-direction: column;
+}
+
+.welcome-subtitle {
+    color: #b58453; /* Warm signature gold accent tint */
+    font-size: 0.85rem;
+    letter-spacing: 3px;
+    font-weight: 700;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+}
+
+.welcome-title {
+    color: #1a1a1a;
+    font-size: 2.8rem;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 25px;
+}
+
+.welcome-desc {
+    color: #555555;
+    font-size: 1.05rem;
+    line-height: 1.7;
+    margin-bottom: 20px;
+}
+
+.welcome-desc strong {
+    color: #1a1a1a;
+    font-weight: 600;
+}
+
+.welcome-actions {
+    margin-top: 15px;
+}
+
+/* Minimalist Premium Accent CTA Link Button */
+.btn-primary {
+    display: inline-block;
+    color: #b58453;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.btn-primary:hover {
+    color: #8c5e32; /* Darkens gold smoothly during mouse focus interactions */
+    transform: translateX(5px); /* Clean micro-animation pushing arrow subtly forward */
+}
+
+/* --- COLUMN 2: PREMIUM GRAPHIC CAROUSEL BLOCK --- */
+.welcome-image-block {
+    flex: 1; /* Occupies remaining 50% split area layout */
+    display: flex;
+    justify-content: center;
+}
+
+/* Secure Frame Guard preventing scaling blowout alignment bugs */
+.image-wrapper {
+    width: 100%;
+    max-width: 500px;
+    height: 550px;
+    border-radius: 24px; /* Smooth elegant organic corner curving matching modern UI trends */
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(181, 132, 83, 0.08); /* Warm gold tinted drop drop shadow cast */
+}
+
+.image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Keeps image correctly proportioned without skew stretching distortion squish */
+    transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+/* Smooth zoom transition when user highlights the section anywhere */
+.welcome-container:hover .image-wrapper img {
+    transform: scale(1.04);
+}
+
+/* --- RESPONSIBLE DESIGN MEDIA ADAPTATIONS FOR SMARTPHONES --- */
+@media (max-width: 992px) {
+    .welcome-container {
+        flex-direction: column-reverse; /* Pushes image gracefully above or below text on small pads */
+        gap: 50px;
+        text-align: center;
+    }
+
+    .welcome-title {
+        font-size: 2.2rem;
+    }
+
+    .image-wrapper {
+        height: 400px; /* Adapts height dynamically smaller ensuring compact device screen viewability */
+    }
+    
+    .btn-primary:hover {
+        transform: none; /* Disables side nudge transitions across gesture mobile touch taps */
+    }
+}
+ .service{
+  align-items: center;
+  background-color:#fcf9f660;
+ }
+ /*swiper images*/
+/* Master Layout Wrapper Container */
+.bloom-welcome-section {
+    width: 100%;
+    padding: 100px 4%; /* Generous breathing room top/bottom and responsive padding sides */
+    display: flex;
+    justify-content: center;
+    background-color: #fcf9f660; /* Warm, ultra-premium soft cream salon theme backdrop */
+}
+
+.bloom-container {
+    max-width: 1200px;
+    width: 100%;
+    display: flex;
+    align-items: center; /* Ensures content and picture line up perfectly flat in the middle */
+    gap: 70px; /* Sizable gap preventing layout overcrowding */
+}
+
+/* --- LEFT SIDE: TEXT BLOCK BRANDING --- */
+.bloom-text-col {
+    flex: 1.2; /* Slightly wider distribution layout allocation for easier text scanning */
+    display: flex;
+    flex-direction: column;
+}
+
+.bloom-tagline {
+    color: #b58453; /* Warm signature gold accent color */
+    font-size: 0.85rem;
+    letter-spacing: 3px;
+    font-weight: 700;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+}
+
+.bloom-heading {
+    color: #1a1a1a;
+    font-size: 2.6rem;
+    font-weight: 700;
+    line-height: 1.25;
+    margin-bottom: 25px;
+}
+
+.bloom-paragraph {
+    color: #4a4a4a;
+    font-size: 1.05rem;
+    line-height: 1.7;
+    margin-bottom: 18px; /* Balanced spacing distribution between long content elements */
+}
+
+/* Soft typographic hierarchy focus treatment */
+.bloom-paragraph strong {
+    color: #1a1a1a;
+    font-weight: 600;
+}
+
+.bloom-action-row {
+    margin-top: 15px;
+}
+
+/* Premium minimalist layout anchor links */
+.bloom-btn {
+    display: inline-block;
+    color: #b58453;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.bloom-btn:hover {
+    color: #8c5e32; /* Rich dark gold transition shift on mouse interaction states */
+    transform: translateX(6px); /* Elegant slide displacement nudge forwards */
+}
+
+
+/* --- MOBILE & PAD TABLET LAYER BREAKPOINTS --- */
+@media (max-width: 992px) {
+    .bloom-container {
+        flex-direction: column-reverse; /* Smoothly stacks graphic frames safely on top of text files across screens */
+        gap: 45px;
+        text-align: center;
+    }
+
+    .bloom-heading {
+        font-size: 2.1rem;
+    }
+
+   
+
+    .bloom-btn:hover {
+        transform: none; /* Safely strips animation micro movements for flat fingertip gesture taps */
+    }
+}
+.right-column{
+   flex: 1; /* Takes remaining 50% width */
+    display: flex;
+    flex-wrap: wrap;
+
+}
+  .swiper {
+        width: 300px;
+        height:300px;
+      }
+      .swiper-slide {
+        overflow: hidden;
+      }
+      .swiper-slide img{
+        border-radius: 15px;
+        border-top: 5px solid #b80e63;
+        border-bottom: 5px solid #b80e63;
+       
+      }
+/* Section Container Wrapper */
+.promise-section {
+    width: 100%;
+    padding: 80px 4%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+     background-color:#fcf9f660;
+}
+
+.promise-container {
+    max-width: 1200px;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 80px; /* Space between left and right columns */
+}
+
+/* --- LEFT COLUMN STYLES --- */
+.promise-left {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.promise-subtitle {
+    font-size: 20PX;
+    letter-spacing: 3px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+
+
+
+.promise-desc {
+    color: black;
+    font-size: 18px;
+    line-height: 1.6;
+    max-width: 400px;
+
+}
+
+/* --- RIGHT COLUMN STYLES (TIMELINE) --- */
+.promise-right {
+    
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    background-color:#bf6190;;
+    border-radius: 10px;
+    justify-content: space-between;
+    gap: 40px;
+    position: relative;
+    border-left: 1px solid #e55ea1; /* The thin vertical grey line */
+    padding-left: 40px; /* Space between line and text */
+}
+
+.timeline-item {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+/* Circular Roman Numeral Badges over the Line */
+.timeline-number {
+    position: absolute;
+    left: -57px;
+    top:5px; 
+    width: 32px;
+    height: 32px;
+    background-color: white;
+    border: 1px solid ;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #cd3838; /* Roman numeral text color */
+    font-size: 0.75rem;
+    font-weight: 600;
+}
+
+.timeline-text {
+    color:black;
+    font-size: 20px;
+    line-height: 1.6;
+}
+
+@media screen and (min-width:768px){
+.promise-right{
+    flex: 1;
+}
+.promise-left{
+    flex: 1;
+}
+.promise-desc{
+    display: flex;
+    flex-wrap: wrap;
+}
+}
+<!--services-->
+   
+.cards-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 20px;
+  padding-left: 20px;
+  
+}
+.cards{
+    display: flex;
+    padding-left: 20px;
+    justify-content: space-evenly;
+   
+}
+.card-1-img{
+  position: relative;
+flex-basis: 20%;
+border-radius: 15px;
+  padding-right: 10px;
+  padding-left: 20px;
+  padding-top: 10px;
+   background-color: #b80e63;
+    border-radius: 10px;  
+}
+.imgs{
+   border-radius: 10px;
+}
+ 
+
+
+
+--footer-area--
+.site-footer {
+  background-color: white; /* Earthy/organic light background tint */
+  color: #f8f4f4;
+  padding: 60px 20px 30px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.footer-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto 40px auto;
+  padding-bottom: 30px;
+  border-bottom: 1px solid #e5dec9;
+}
+
+.footer-brand h2 {
+  margin: 0 0 10px 0;
+  letter-spacing: 2px;
+}
+
+.footer-brand p {
+  margin: 0;
+  color: #666;
+  font-size: 0.95rem;
+}
+
+.footer-sections {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-links, .footer-newsletter {
+  flex: 1;
+  min-width: 220px;
+}
+
+.footer-links h3, .footer-newsletter h3 {
+  font-size: 1.1rem;
+  margin-top: 0;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.footer-links ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-links li {
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.footer-links a {
+  text-decoration: none;
+  color: #555;
+  transition: color 0.3s;
+}
+
+.footer-links a:hover {
+  color: #449221;
+}
+
+.hours-title {
+  margin-top: 25px !important;
+  margin-bottom: 10px !important;
+}
+
+.hours-text {
+  color: #555;
+  font-size: 0.95rem;
+  margin: 0;
+}
+
+/* Newsletter Form Styles */
+.footer-newsletter p {
+  color: #666;
+  font-size: 0.95rem;
+  line-height: 1.4;
+  margin-bottom: 15px;
+}
+
+.newsletter-form {
+  display: flex;
+}
+
+.newsletter-form input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px 0 0 4px;
+  flex: 1;
+  outline: none;
+}
+
+.newsletter-form button {
+  background-color: #449221;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 0 4px 4px 0;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.newsletter-form button:hover {
+  background-color: #336e18;
+}
+
+/* Footer Bottom Styles */
+.footer-bottom {
+  border-top: 1px solid #e5dec9;
+  margin-top: 40px;
+  padding-top: 25px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.footer-legal {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.footer-legal p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: #777;
+}
+
+.legal-links a {
+  font-size: 0.85rem;
+  color: #777;
+  text-decoration: none;
+  margin-right: 15px;
+}
+
+.legal-links a:hover {
+  text-decoration: underline;
+}
+
+.footer-socials a {
+  margin-left: 20px;
+  color: #444;
+  font-size: 1.3rem;
+  transition: color 0.3s;
+}
+
+.footer-socials a:hover {
+  color: #449221;
+}
+
+
+--about-page--
+
+.about-content{
+  width: 100%;
+  justify-content: center;
+  padding:80px 4%;
+  display: flex;
+  flex-direction: column;
+  column-gap: 5px;
+  background-color: #eaeaea;
+}
+.about-us{
+  width: 700px;
+
+}
+.about-img{
+  display: flex;
+ 
+}
+.about-img img{
+  border-radius: 20px;
+  padding-left: 5px;
+}
+
+.core-container{
+  padding-left: 20px;
+  display: flex;
+  gap:200px;
+}
+
+
+
+/* Base Wrapper Containment */
+.faq-section {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.faq-container {
+    max-width: 800px;
+    width: 100%;
+}
+
+/* Header Text Blocks */
+.faq-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.faq-subtitle {
+    color: rgb(140, 2, 87); /* Warm gold accent color */
+    font-size: 30px;
+    letter-spacing: 2px;
+    font-weight: 700;
+}
+
+.faq-title {
+    color: black;
+    font-size: 2.2rem;
+    margin: 10px 0 15px 0;
+    font-weight: 700;
+}
+
+.faq-desc {
+    color: #7b6a6a;
+    font-size: 0.95rem;
+}
+
+/* Structural Accordion List Row */
+.faq-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Separation space between cards */
+}
+
+.faq-item {
+    background: #ffffff;
+    border: 1px solid #eaeaea;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
+    transition: border-color 0.3s ease;
+}
+
+.faq-item:hover {
+    border-color: #d4a373; /* Subtle glow ring on card hover */
+}
+
+/* Hiding the operational checkbox */
+.faq-toggle {
+    display: none;
+}
+
+/* Clickable Question Header row */
+.faq-question {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 22px 25px;
+    color: #2c2c2c;
+    font-size: 1.05rem;
+    font-weight: 600;
+    cursor: pointer;
+    user-select: none;
+}
+
+/* CSS Pure Vector Plus Icon Construction */
+.faq-icon {
+    position: relative;
+    width: 18px;
+    height: 18px;
+    flex-shrink: 0;
+    transition: transform 0.3s ease;
+}
+
+.faq-icon::before,
+.faq-icon::after {
+    content: "";
+    position: absolute;
+    background-color: #b58453;
+    transition: transform 0.3s ease;
+}
+
+/* Horizontal line of the plus icon */
+.faq-icon::before {
+    top: 8px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+}
+
+/* Vertical line of the plus icon */
+.faq-icon::after {
+    top: 0;
+    left: 8px;
+    width: 2px;
+    height: 100%;
+}
+
+/* Modern CSS Grid Transition trick for dynamic auto-height expanding */
+.faq-answer-block {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.faq-answer-content {
+    overflow: hidden;
+}
+
+.faq-answer-content p {
+    padding: 0 25px 25px 25px;
+    color: #555555;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+/* --- STATE CHANGE: WHEN BOX IS CHECKED (OPEN) --- */
+
+/* 1. Expand the grid height to reveal text smoothly */
+.faq-toggle:checked ~ .faq-answer-block {
+    grid-template-rows: 1fr;
+}
+
+/* 2. Rotate the custom icon block to simulate a minus/close key */
+.faq-toggle:checked ~ .faq-question .faq-icon {
+    transform: rotate(180deg);
+}
+
+.faq-toggle:checked ~ .faq-question .faq-icon::after {
+    transform: scaleY(0); /* Completely shrinks away the vertical line, leaving only horizontal minus */
+}
+
+.faq-toggle:checked ~ .faq-question {
+    color: #b58453; /* Swaps header text color when open */
+}

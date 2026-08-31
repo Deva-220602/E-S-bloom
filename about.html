@@ -1,0 +1,1256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ES parlour</title>
+    <link rel="stylesheet" href="style.css">
+     <script src="https://kit.fontawesome.com/67333c175b.js" crossorigin="anonymous"></script>
+</head>
+<body>
+ <section class="header">
+<nav class="navbar">
+  <!-- Logo Container -->
+  <div class="logo-area">
+    <img src="E S Bloom logo.jpeg" width="50px" height="50px" alt="E S Bloom Logo">
+  </div>
+<div>
+  <!-- Mobile Hamburger Button -->
+  <button class="menu-toggle" id="menuToggle" aria-label="Open Navigation Menu">
+    <span class="bar"></span>
+    <span class="bar"></span>
+    <span class="bar"></span>
+  </button>
+  </div>
+
+  <!-- Navigation Links -->
+  <div class="links" id="navLinks">
+    <p><a href="index.html" class="active">Home</a></p>
+    <p><a href="about.html">About us</a></p>
+    <p><a href="services.html">services</a></p>
+    <p><a href="contacts.html">contact now</a></p>
+  </div>
+</nav>
+<style>
+  /* --- Global Reset & Base Navbar Style --- */
+
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #ffffff;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  position: relative;
+  z-index: 1000;
+  gap: 410px;
+}
+
+/* --- Mobile Menu Toggle Button (Hamburger) --- */
+.menu-toggle {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 25px;
+  height: 20px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.menu-toggle .bar {
+  width: 100%;
+  height: 3px;
+  background-color: #333333; /* Color of your choice */
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+/* --- Mobile view Layout (Under 768px Screen Width) --- */
+@media (max-width: 767px) {
+  .links {
+    display: none; /* Initially hidden on mobile screen */
+    flex-direction: column;
+    width: 100%;
+    position:absolute;
+    top: 100%; /* Sits exactly below the main navigation bar header */
+    left: 5px;
+    background-color: #a01474;
+    box-shadow:  rgba(0, 0, 0, 0.08);
+  
+  }
+  .navbar{
+    gap: 350px;
+  }
+
+  /* Target paragraphs inside the mobile drop menu */
+  .links p {
+    margin: 0;
+    width: 100%;
+  }
+
+  .links a {
+    display: block;
+    padding: 15px 25px;
+    text-decoration: none;
+    color: white;
+    border-bottom: 1px solid #f5f5f5;
+    text-align: center;
+  }
+
+ 
+  /* The active toggle state that displays the menu */
+  .links.show {
+    display: flex;
+  }
+
+  /* Optional: Animation transforms hamburger lines into an 'X' close graphic */
+  .menu-toggle.open .bar:nth-child(1) {
+    transform: translateY(8.5px) rotate(45deg);
+  }
+  .menu-toggle.open .bar:nth-child(2) {
+    opacity: 0;
+  }
+  .menu-toggle.open .bar:nth-child(3) {
+    transform: translateY(-8.5px) rotate(-45deg);
+  }
+}
+
+/* --- Laptop / Desktop Responsive Layout (768px and up) --- */
+@media (min-width: 768px) {
+  .menu-toggle {
+    display: none; /* Hide the burger toggle on desktop screens */
+  }
+
+  .links {
+    display: flex !important; /* Forces link container horizontal flex display */
+    flex-direction: row;
+    gap: 20px;
+  }
+
+  .links p {
+    margin: 0;
+  }
+
+  .links a {
+    text-decoration: none;
+    color: #333333;
+  }
+}
+
+</style>
+ </section>
+ <style>
+/* --- Global Box Reset (Add at the very top of style.css if not already present) --- */
+
+
+/* --- About Us Section Layout --- */ 
+.about-section {
+    width: 100%;
+    padding: 60px 20px;
+    background: #ffffff38; 
+    display: flex;
+    justify-content: center;
+}
+
+.about-container { 
+    display: flex; 
+    align-items: center; 
+    justify-content: space-between; 
+    gap: 50px; 
+    width: 100%; 
+    max-width: 1200px;
+    border-radius: 16px; 
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03); 
+    padding: 40px;
+    overflow: hidden; 
+} 
+
+/* --- Text Column Styling --- */ 
+.about-text-content { 
+    flex: 1.2; 
+    min-width: 0; /* Prevents text overflow */
+} 
+
+.about-title { 
+    font-size: 2.5rem; 
+    color: #6b1d2f; /* Premium Maroon Accent */ 
+    margin-bottom: 25px; 
+    font-weight: 700; 
+    position: relative; 
+    word-wrap: break-word;
+} 
+
+/* Elegant gold accent line beneath the header */ 
+.about-title::after { 
+    content: ''; 
+    display: block; 
+    width: 60px; 
+    height: 3px; 
+    background-color: #d4af37; /* Signature Gold */ 
+    margin-top: 8px; 
+} 
+
+.about-description { 
+    font-size: 1.05rem; 
+    color: #555555; 
+    line-height: 1.8; 
+    margin-bottom: 20px; 
+} 
+
+.about-description:last-child { 
+    margin-bottom: 0; 
+} 
+
+/* --- Image Column Styling --- */ 
+.about-image-wrapper { 
+    flex: 1; 
+    display: flex; 
+    justify-content: center; 
+    min-width: 0;
+    width: 100%;
+} 
+
+.about-img { 
+    width: 100%; 
+    max-width: 450px; 
+    height: auto; 
+    aspect-ratio: 1 / 1; /* Maintains a clean perfect square */
+    object-fit: cover; /* Crops image cleanly without distortion */ 
+    border-radius: 12px; 
+    box-shadow: 0 8px 25px rgba(107, 29, 47, 0.1); 
+    display: block;
+} 
+
+/* --- Responsive Breakpoint (Tablets & Landscape Mobile) --- */ 
+@media (max-width: 992px) { 
+    .about-container { 
+        flex-direction: column; /* Stacks text vertically over the image */ 
+        padding: 30px 20px; 
+        gap: 35px;
+    } 
+    
+    .about-title { 
+        font-size: 2.2rem; 
+    } 
+    
+    .about-image-wrapper {
+        max-width: 100%;
+    }
+
+    .about-img { 
+        max-width: 400px; /* Shrinks the image slightly on smaller tablet sizes */
+    } 
+}
+
+/* --- Responsive Breakpoint (Small Smartphones) --- */ 
+@media (max-width: 480px) {
+    .about-section {
+        padding: 40px 10px; /* Tighter padding for standard phone borders */
+    }
+
+    .about-container {
+        padding: 20px 15px;
+    }
+
+    .about-title { 
+        font-size: 1.8rem; 
+        margin-bottom: 15px;
+    }
+
+    .about-description {
+        font-size: 0.95rem; /* Marginally drops reading text scale for tiny screens */
+        line-height: 1.6;
+    }
+
+    .about-img {
+        max-width: 100%; /* Image takes full responsive container grid width */
+    }
+}
+</style>
+<!-- ABOUT US SECTION --> 
+<section class="about-section">
+    <div class="about-container">
+        
+        <!-- Text Column --> 
+        <div class="about-text-content"> 
+            <h1 class="about-title">About Us</h1> 
+            <p class="about-description" style="color: black;">
+                At E S BLOOM, we believe hair and skin care are not just routines—they are forms of personal art. 
+                Founded as a premium sanctuary for those who value detail, our salon blends advanced modern 
+                techniques with timeless luxury. We specialize in bespoke hair color, advanced skin treatments, 
+                and breathtaking bridal transformations designed specifically for your unique style.
+            </p> 
+            <p class="about-description"  style="color: black;">
+                We invite you to step away from the noise of the outside world and enter a space engineered 
+                entirely for your relaxation. From our curated botanical treatments to our master stylists, 
+                every element of your visit is crafted to elevate your confidence and restore your spirit. 
+                Experience self-care redefined, one luxury appointment at a time.
+            </p> 
+        </div> 
+        
+        <!-- Image Column --> 
+        <div class="about-image-wrapper"> 
+            <img src="E S Bloom logo.jpeg" alt="E S Bloom Salon Logo" class="about-img"> 
+        </div> 
+
+    </div>
+</section>
+    <style>
+        /* --- Core Values Section Container --- */
+.core-section {
+    background-color:  #ffffff27; /* Soft, warm neutral background */
+    padding: 60px 20px;
+    width: 100%;
+    margin: 40px auto;
+    border-radius: 12px;
+}
+
+/* --- Section Heading --- */
+.core-heading h1 {
+    font-size: 2.2rem;
+    color: #6b1d2f; /* Deep elegant maroon */
+    text-align: center;
+    letter-spacing: 2px;
+    margin-bottom: 40px;
+    position: relative;
+}
+
+/* Decorative gold underline beneath the title */
+.core-heading h1::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 3px;
+    background-color: #d4af37; /* Elegant Gold */
+    margin: 10px auto 0 auto;
+}
+
+/* --- Master Twin-Column Layout --- */
+.core-container {
+    display: flex;
+    gap: 40px;
+    align-items: stretch; /* Forces both columns to be equal height */
+}
+
+/* --- Left Column: Text Content Block --- */
+.core-content {
+    flex: 1.2; /* Allocates slightly more width to the text description */
+}
+
+.philosophy-text {
+    background-color: rgb(173, 36, 109); /* Vibrant premium berry/plum tone */
+    color: #ffffff;
+    padding: 35px;
+    border-radius: 8px;
+    box-shadow: 0 8px 20px rgba(173, 36, 109, 0.15);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px; /* Uniform spacing between text blocks */
+}
+
+.highlight-p {
+    font-size: 1rem;
+    line-height: 1.7rem;
+}
+
+.highlight-p strong {
+    font-size: 1.15rem;
+    color: #ffe6f2; /* Soft light accent for paragraph subheadings */
+    letter-spacing: 0.5px;
+}
+
+/* --- Right Column: 2x2 Feature Cards Grid --- */
+.core-grid {
+    flex: 1;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 equal columns */
+    gap: 20px;
+}
+
+/* --- Individual Value Cards --- */
+.grid-item {
+    background-color: #ffffff;
+    border-radius: 8px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centers horizontally */
+    justify-content: center; /* Centers vertically */
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+    border-top: 3px solid transparent;
+    transition: all 0.3s ease;
+}
+
+/* Hover dynamic micro-interaction */
+.grid-item:hover {
+    transform: translateY(-5px);
+    border-top: 3px solid #d4af37; /* Pops a gold top-border on hover */
+    box-shadow: 0 8px 25px rgba(173, 36, 109, 0.1);
+}
+
+/* --- Icon and Label Typography --- */
+.grid-icon {
+    font-size: 2.2rem;
+    color: #d4af37; /* Signature Gold */
+    margin-bottom: 12px;
+}
+
+.grid-item h3 {
+    font-size: 1.05rem;
+    color: #333333;
+    font-weight: 600;
+    line-height: 1.4rem;
+}
+
+/* --- Responsive Layout for Smaller Displays --- */
+@media (max-width: 900px) {
+    .core-container {
+        flex-direction: column; /* Stack columns vertically on tablet/mobile */
+    }
+    
+    .core-grid {
+        grid-template-columns: repeat(2, 1fr); /* Keeps 2 columns on tablets */
+    }
+}
+
+@media (max-width: 500px) {
+    .core-grid {
+        grid-template-columns: 1fr; /* Full-width single column cards on small phones */
+    }
+    
+    .core-heading h1 {
+        font-size: 1.8rem;
+    }
+}
+
+    </style>
+    <section class="core-section">
+    <div class="core-heading">
+        <h1>OUR CORE VALUES</h1>
+    </div>
+
+    <div class="core-container">
+        <!-- Left Content Column -->
+        <div class="core-content"> 
+            <div class="philosophy-text">
+                <p class="highlight-p"><strong>Our Philosophy</strong><br>At E S BLOOM, we believe premium beauty requires an uncompromising standard. We merge advanced, non-invasive clinical treatments with conscious, ethical luxury to provide an elevated self-care experience. Every product we choose for your skin and hair is rigorously vetted to ensure it is safe, cruelty-free, and highly effective.</p>
+                <p class="highlight-p"><strong>Continuous Innovation</strong><br>Our team stays at the cutting edge of the beauty industry through continuous education. We consistently master modern hair styling, advanced skincare, and high-definition bridal techniques to bring you the best global trends.</p>
+            </div>
+        </div>
+
+        <!-- Right Grid Column -->
+        <div class="core-grid">
+            <!-- Card 1 -->
+            <div class="grid-item">
+                <div class="grid-icon"><i class="fa-solid fa-hand-sparkles"></i></div>
+                <h3>Uncompromising Hygiene</h3>
+            </div>
+            <!-- Card 2 -->
+            <div class="grid-item">
+                <div class="grid-icon"><i class="fa-solid fa-bolt"></i></div>
+                <h3>Continuous Innovation</h3>
+            </div>
+            <!-- Card 3 -->
+            <div class="grid-item">
+                <div class="grid-icon"><i class="fa-solid fa-gem"></i></div>
+                <h3>Conscious Luxury</h3>
+            </div>
+            <!-- Card 4 -->
+            <div class="grid-item">
+                <div class="grid-icon"><i class="fa-solid fa-spa"></i></div>
+                <h3>Empowerment Through Care</h3>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <style>
+
+        .services-container {
+            width: 100%;
+            margin: 0 auto;
+            background: #ffffff27;
+            padding: 40px;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+        }
+
+        /* --- Typography Styles --- */
+        .section-title {
+            font-size: 2.2rem;
+            color: #6b1d2f; /* Deep Elegant Maroon */
+            text-align: center;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+        }
+
+        .section-title span {
+            font-size: 1.8rem;
+            vertical-align: middle;
+        }
+
+        .service-heading {
+            font-size: 1.8rem;
+            color: #8a253e;
+            text-align: center;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .service-intro {
+            font-size: 1.1rem;
+            color: #555555;
+            text-align: center;
+            max-width: 750px;
+            margin: 0 auto 35px auto;
+        }
+
+        /* --- Grid Structure for Features --- */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        /* --- Card Styles --- */
+        .feature-card {
+            background: #fffcfb;
+            border-left: 4px solid #d4af37; /* Elegant Bridal Gold Accent */
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.02);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(107, 29, 47, 0.1);
+        }
+
+        .feature-card h4 {
+            font-size: 1.25rem;
+            color: #6b1d2f;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .feature-card p {
+            font-size: 0.95rem;
+            color: #666666;
+        }
+
+        /* --- Responsive Viewports --- */
+        @media (max-width: 600px) {
+            
+            .services-container {
+                padding: 20px;
+            }
+            .section-title {
+                font-size: 1.8rem;
+            }
+            .service-heading {
+                font-size: 1.4rem;
+            }
+        }
+    </style>
+    <section class="services-container">
+        
+        <!-- Header Section -->
+        <h2 class="section-title" style="color: #a01474;">Our Signature Services <span>🌟</span></h2>
+        <h3 class="service-heading">Maharashtrian Bridal Makeup</h3>
+        <p class="service-intro">
+            Embrace the royal elegance of a true Marathi bride. Our specialized Maharashtrian bridal makeup services combine deep cultural tradition with flawless, long-lasting modern techniques.
+        </p>
+
+        <!-- Features Grid Layout -->
+        <div class="features-grid">
+            
+            <!-- Feature Item 1 -->
+            <div class="feature-card">
+                <h4>The Nauvari Glow</h4>
+                <p>Radiant, photogenic HD and Airbrush makeup tailored to perfectly complement your skin tone and survive hours of wedding rituals.</p>
+            </div>
+
+            <!-- Feature Item 2 -->
+            <div class="feature-card">
+                <h4>Traditional Styling</h4>
+                <p>Immaculate draping of your Nauvari or Paithani saree to give you that classic, majestic look.</p>
+            </div>
+
+            <!-- Feature Item 3 -->
+            <div class="feature-card">
+                <h4>Authentic Bridal Accents</h4>
+                <p>Expert placement of the traditional Chandrakor (crescent moon) bindi, Nath (nose ring), and stunning Mundavalya (pearl forehead ornament).</p>
+            </div>
+
+        </div>
+
+    </section>
+   
+   
+   <style>
+        .nail-services-container {
+            width: 100%;
+            margin: 0 auto;
+            background: #ffffff27;
+            padding: 40px;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(186, 110, 126, 0.06);
+        }
+
+        /* --- Typography Styles --- */
+        .section-title {
+            font-size: 2.2rem;
+            color: #803041; /* Deep Elegant Berry */
+            text-align: center;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+        }
+
+        .section-title span {
+            font-size: 1.8rem;
+            vertical-align: middle;
+        }
+
+        .service-heading {
+            font-size: 1.8rem;
+            color: #ba6e7e; /* Soft Rose Gold / Mauve */
+            text-align: center;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .service-intro {
+            font-size: 1.1rem;
+            color: #555555;
+            text-align: center;
+            max-width: 750px;
+            margin: 0 auto 40px auto;
+        }
+
+        /* --- Responsive 3-Column Grid --- */
+        .nail-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        /* --- Individual Card Styling --- */
+        .nail-card {
+            background: #fffbfa;
+            border-top: 3px solid #ba6e7e; /* Rose border accent on top */
+            padding: 30px 25px;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.02);
+            transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+        }
+
+        /* Interactive Hover Interaction */
+        .nail-card:hover {
+            transform: translateY(-5px);
+            border-top-color: #803041; /* Darkens border on hover */
+            box-shadow: 0 10px 25px rgba(186, 110, 126, 0.15);
+        }
+
+        /* Custom Icon Styling */
+        .card-icon {
+            font-size: 2.5rem;
+            color: #ba6e7e;
+            margin-bottom: 15px;
+            transition: color 0.3s ease;
+        }
+
+        .nail-card:hover .card-icon {
+            color: #803041;
+        }
+
+        .nail-card h4 {
+            font-size: 1.25rem;
+            color: #803041;
+            margin-bottom: 12px;
+            font-weight: 600;
+        }
+
+        .nail-card p {
+            font-size: 0.95rem;
+            color: #666666;
+            text-align: justify;
+            text-align-last: center; /* Beautiful balanced text rendering */
+        }
+
+        /* --- Viewport Responsiveness --- */
+        @media (max-width: 600px) {
+        
+            .nail-services-container {
+                padding: 20px;
+            }
+            .section-title {
+                font-size: 1.8rem;
+            }
+            .service-heading {
+                font-size: 1.4rem;
+            }
+        }
+    </style>
+
+    <section class="nail-services-container">
+        
+        <!-- Header Section -->
+        <h2 class="section-title" style="color: #a01474;">Our Signature Services <span>💅</span></h2>
+        <h3 class="service-heading">Luxury Nail Art</h3>
+        <p class="service-intro">
+            Your hands tell a story—make it a glamorous one! Step into our nail bar and let our technicians turn your fingertips into miniature canvases.
+        </p>
+
+        <!-- Dynamic Grid Section -->
+        <div class="nail-grid">
+            
+            <!-- Card 1: Extensions & Overlays -->
+            <div class="nail-card">
+                <div class="card-icon"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
+                <h4>Extensions & Overlays</h4>
+                <p>Durable Gel and Acrylic extensions sculpted with precision to match your preferred shape and length perfectly.</p>
+            </div>
+
+            <!-- Card 2: Custom Nail Art -->
+            <div class="nail-card">
+                <div class="card-icon"><i class="fa-solid fa-palette"></i></div>
+                <h4>Custom Nail Art</h4>
+                <p>From timeless, elegant French manicures and subtle ombre fades to intricate hand-painted patterns, chrome finishes, and bridal rhinestone embellishments.</p>
+            </div>
+
+            <!-- Card 3: Nail Care -->
+            <div class="nail-card">
+                <div class="card-icon"><i class="fa-solid fa-sparkles"></i></div>
+                <h4>Nail Care</h4>
+                <p>Pampering gel manicures, structured overlays, and deeply restorative nail therapy to keep your natural nails strong and healthy.</p>
+            </div>
+
+        </div>
+
+    </section>
+    <style>
+        .mehendi-container {
+            width:100% ;
+            margin: 0 auto;
+            background:#ffffff27;
+            padding: 45px;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(138, 37, 62, 0.04);
+        }
+
+        /* --- Typography Styles --- */
+        .section-title {
+            font-size: 2.2rem;
+            color: #721c24; /* Rich Traditional Maroon */
+            text-align: center;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+        }
+
+        .section-title span {
+            font-size: 1.8rem;
+            vertical-align: middle;
+        }
+
+        .service-heading {
+            font-size: 1.8rem;
+            color: #b55d21; /* Warm Henna / Festive Terracotta Orange */
+            text-align: center;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .service-intro {
+            font-size: 1.1rem;
+            color: #555555;
+            text-align: center;
+            max-width: 750px;
+            margin: 0 auto 40px auto;
+        }
+
+        /* --- Grid Structure for Mehendi Options --- */
+        .mehendi-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+        }
+
+        /* --- Elegant Card Layout --- */
+        .mehendi-card {
+            background: #fffdfb;
+            border: 1px solid #f5eae2;
+            border-left: 5px solid #b55d21; /* Solid brand accent bar */
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.01);
+            transition: all 0.3s ease;
+        }
+
+        /* Interactive Card Elevate */
+        .mehendi-card:hover {
+            transform: translateY(-4px);
+            border-left-color: #721c24; /* Changes accent color on hover */
+            box-shadow: 0 10px 25px rgba(181, 93, 33, 0.12);
+        }
+
+        /* Flexbox alignment for heading and icons */
+        .card-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+
+        .card-icon {
+            font-size: 1.8rem;
+            color: #b55d21;
+            transition: color 0.3s ease;
+        }
+
+        .mehendi-card:hover .card-icon {
+            color: #721c24;
+        }
+
+        .mehendi-card h4 {
+            font-size: 1.3rem;
+            color: #721c24;
+            font-weight: 600;
+        }
+
+        .mehendi-card p {
+            font-size: 0.98rem;
+            color: #666666;
+            text-align: justify;
+        }
+
+        /* --- Viewport Responsiveness --- */
+        @media (max-width: 600px) {
+            
+            .mehendi-container {
+                padding: 25px 20px;
+            }
+            .section-title {
+                font-size: 1.8rem;
+            }
+            .service-heading {
+                font-size: 1.4rem;
+            }
+            .mehendi-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+
+
+    <section class="mehendi-container">
+        
+        <!-- Section Headers -->
+        <h2 class="section-title" style="color: #a01474;">Our Signature Services <span>🎨</span></h2>
+        <h3 class="service-heading">Exquisite Mehendi Designs</h3>
+        <p class="service-intro">
+            Celebrate love and milestones with the rich, deep stains of our organic bridal and festive henna. Our Mehendi artists are known for their precision and speed.
+        </p>
+
+        <!-- Service Offerings Content Block -->
+        <div class="mehendi-grid">
+            
+            <!-- Category 1: Bridal Masterpieces -->
+            <div class="mehendi-card">
+                <div class="card-header">
+                    <div class="card-icon"><i class="fa-solid fa-heart-customfa-solid fa-square-signature"><i class="fa-solid fa-feather-pointed"></i></i></div>
+                    <h4>Bridal Masterpieces</h4>
+                </div>
+                <p>Detailed Traditional Maharashtrian, Arabic, and Bharatanatyam motifs. We can seamlessly weave personalized elements like your love story, couple portraits, or wedding date directly into the patterns.</p>
+            </div>
+
+            <!-- Category 2: Festive Henna -->
+            <div class="mehendi-card">
+                <div class="card-header">
+                    <div class="card-icon"><i class="fa-solid fa-sparkles"></i></div>
+                    <h4>Festive Henna</h4>
+                </div>
+                <p>Chic, modern, and quick minimalistic designs specifically crafted for bridesmaids, family gatherings, cultural festivals, and casual special occasions.</p>
+            </div>
+
+        </div>
+
+    </section>
+
+    <style>
+
+        .boutique-container {
+            width: 100%;
+            margin: 0 auto;
+            background:#ffffff27 ;
+            padding: 45px;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(21, 67, 54, 0.04);
+        }
+
+        /* --- Typography Styles --- */
+        .section-title {
+            font-size: 2.2rem;
+            color: #154336; /* Deep Emerald Green */
+            text-align: center;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+        }
+
+        .section-title span {
+            font-size: 1.8rem;
+            vertical-align: middle;
+        }
+
+        .service-heading {
+            font-size: 1.8rem;
+            color: #c49a45; /* Champagne / Antique Gold Accent */
+            text-align: center;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .service-intro {
+            font-size: 1.1rem;
+            color: #555555;
+            text-align: center;
+            max-width: 750px;
+            margin: 0 auto 40px auto;
+        }
+
+        /* --- Responsive 3-Column Grid Layout --- */
+        .boutique-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        /* --- Couture Card Styling --- */
+        .boutique-card {
+            background: #ffffff;
+            border: 1px solid #eae7e1;
+            padding: 35px 25px;
+            border-radius: 12px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+
+        /* Decorative top accent line inside card */
+        .boutique-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: #c49a45;
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+
+        /* Interactive Hover State */
+        .boutique-card:hover {
+            transform: translateY(-6px);
+            border-color: #b42077;
+            box-shadow: 0 12px 25px rgba(67, 21, 37, 0.1);
+        }
+
+        .boutique-card:hover::before {
+            transform: scaleX(1);
+            background: #ba0c9d;
+        }
+
+        /* Custom Icon Styling */
+        .card-icon {
+            font-size: 2.4rem;
+            color: #c49a45;
+            margin-bottom: 18px;
+            transition: color 0.3s ease;
+        }
+
+        .boutique-card:hover .card-icon {
+            color: #154336;
+        }
+
+        .boutique-card h4 {
+            font-size: 1.25rem;
+            color: #154336;
+            margin-bottom: 12px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+
+        .boutique-card p {
+            font-size: 0.95rem;
+            color: #666666;
+            text-align: justify;
+            text-align-last: center;
+        }
+
+        /* --- Viewport Responsiveness --- */
+        @media (max-width: 600px) {
+            
+            .boutique-container {
+                padding: 30px 20px;
+            }
+            .section-title {
+                font-size: 1.8rem;
+            }
+            .service-heading {
+                font-size: 1.4rem;
+            }
+        }
+    </style>
+
+    <section class="boutique-container">
+        
+        <!-- Header Section -->
+        <h2 class="section-title" style="color: #a01474;">Our Signature Services <span>👗</span></h2>
+        <h3 class="service-heading">Designer Boutique</h3>
+        <p class="service-intro">
+            Complete your transformation under one roof! Our in-house fashion boutique curates and designs bespoke outfits that fit like a second skin.
+        </p>
+
+        <!-- Dynamic Grid Section -->
+        <div class="boutique-grid">
+            
+            <!-- Card 1: Bridal & Festive Wear -->
+            <div class="boutique-card">
+                <div class="card-icon"><i class="fa-solid fa-gem"></i></div>
+                <h4>Bridal & Festive Wear</h4>
+                <p>Custom-tailored Paithani blouses, hand-embroidered lehengas, and elegant fusion wear crafted to make you stand out on your special occasions.</p>
+            </div>
+
+            <!-- Card 2: Custom Stitching & Design -->
+            <div class="boutique-card">
+                <div class="card-icon"><i class="fa-solid fa-scissors"></i></div>
+                <h4>Custom Stitching & Design</h4>
+                <p>Expert pattern makers who specialize in intricate zardozi, aari embroidery, and modern silhouette tailoring engineered to fit you flawlessly.</p>
+            </div>
+
+            <!-- Card 3: Personal Styling -->
+            <div class="boutique-card">
+                <div class="card-icon"><i class="fa-solid fa-user-tie"></i></div>
+                <h4>Personal Styling</h4>
+                <p>One-on-one consultations to help you match your outfit's neckline and fabric perfectly with your planned bridal makeup and jewelry.</p>
+            </div>
+
+        </div>
+
+    </section>
+    <section class="cta" style=" background:#ffffff27 ">
+        <center>
+    <div class="cta-contents " style=" background:#ffffff27 ">
+        <h1 style="color: rgb(209, 46, 147);">Ready To <span style="color:white;">Experience</span> The Luxury?</h1><br>
+        <p style="font-size: 20px;">Step into our world and let our experts design a treatment</p>
+        <p style="font-size: 20px;">entirely customized to your hair, skin, and wellness goals.</p><br>
+        <button style="background-color:rgb(140, 2, 87) ; color: white ; padding: 10px; border-radius: 10px;">Call Now <i class="fa-brands fa-viber"></i></button>
+    </div>
+    </center><br>
+    <!--faq-->
+    <section class="faq-section" style=" background:#ffffff27 ">
+                <div class="faq-container">
+            
+            <div class="faq-header">
+                <span class="faq-subtitle">HAVE QUESTIONS?</span>
+                <h2 class="faq-title">Frequently Asked Questions</h2>
+                <p class="faq-desc">Can't find the answer you're looking for? Reach out directly via our contact page.</p>
+            </div>
+
+            <div class="faq-wrapper">
+                
+                <!-- FAQ Item 1 -->
+                <div class="faq-item">
+                    <input type="checkbox" id="faq-1" class="faq-toggle">
+                    <label for="faq-1" class="faq-question">
+                        <span>How long do gel extensions or acrylic nails typically last?</span>
+                        <span class="faq-icon"></span>
+                    </label>
+                    <div class="faq-answer-block">
+                        <div class="faq-answer-content">
+                            <p>With proper care, a full set lasts between 3 to 4 weeks. We highly recommend booking a refill appointment every 2 to 3 weeks to keep them strong, clean, and prevent any lifting at the base.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 2 -->
+                <div class="faq-item">
+                    <input type="checkbox" id="faq-2" class="faq-toggle">
+                    <label for="faq-2" class="faq-question">
+                        <span>How soon before a major event or wedding should I get a facial?</span>
+                        <span class="faq-icon"></span>
+                    </label>
+                    <div class="faq-answer-block">
+                        <div class="faq-answer-content">
+                            <p>You should get your deep-cleansing or bridal facial 3 to 5 days before your event. This gives your skin ample time to calm down from any temporary redness and allows the inner cellular glow to fully surface.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 3 -->
+                <div class="faq-item">
+                    <input type="checkbox" id="faq-3" class="faq-toggle">
+                    <label for="faq-3" class="faq-question">
+                        <span>What is the difference between HD Makeup and Airbrush Makeup?</span>
+                        <span class="faq-icon"></span>
+                    </label>
+                    <div class="faq-answer-block">
+                        <div class="faq-answer-content">
+                            <p>HD Makeup uses light-diffusing cosmetic layers applied with premium brushes to look natural under ultra-fine cameras. Airbrush Makeup uses a specialized spray gun to mist a thin, flawless, transfer-proof layer, which is highly recommended for humid weather or oily skin.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 4 -->
+                <div class="faq-item">
+                    <input type="checkbox" id="faq-4" class="faq-toggle">
+                    <label for="faq-4" class="faq-question">
+                        <span>How far in advance should I bring in fabric for a custom bridal blouse?</span>
+                        <span class="faq-icon"></span>
+                    </label>
+                    <div class="faq-answer-block">
+                        <div class="faq-answer-content">
+                            <p>For custom bridal blouses with heavy Zardosi or Aari hand-embroidery work, please bring your fabric 4 to 6 weeks in advance. This ensures plenty of time for meticulous crafting and perfect final trial alterations.</p>
+                        </div>
+                    </div>
+                </div>
+                 <!-- FAQ Item 5 -->
+                <div class="faq-item">
+                    <input type="checkbox" id="faq-4" class="faq-toggle">
+                    <label for="faq-4" class="faq-question">
+                        <span>How often should I get a professional hair spa treatment?</span>
+                        <span class="faq-icon"></span>
+                    </label>
+                    <div class="faq-answer-block">
+                        <div class="faq-answer-content">
+                            <p>For normal hair maintenance, once a month is perfect. If your hair is heavily chemically treated, bleached, severely dry, or damaged, we recommend a restorative scalp spa every 2 weeks until hair health is restored.</p>
+                        </div>
+                    </div>
+                </div>
+                 <!-- FAQ Item 6 -->
+                <div class="faq-item">
+                    <input type="checkbox" id="faq-4" class="faq-toggle">
+                    <label for="faq-4" class="faq-question">
+                        <span>How soon before a major event or wedding should I get a facial?</span>
+                        <span class="faq-icon"></span>
+                    </label>
+                    <div class="faq-answer-block">
+                        <div class="faq-answer-content">
+                            <p>You should get your deep-cleansing or bridal facial 3 to 5 days before your event. This gives your skin time to calm down from any temporary redness and allows the inner cellular glow to fully surface on your wedding day.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        </section><br><br>
+
+     <footer class="site-footer" style="background-color: white;">
+  <!-- Brand and Value Propositions -->
+  <div class="footer-top">
+    <div class="footer-brand">
+      <img src="E S Bloom logo.jpeg" width="50px" height="50px" style="border-radius: 5px;">
+      <p>Nurturing your natural beauty with clean, modern wellness therapies.</p>
+    </div>
+    <div class="footer-features">
+      <div class="feature-item">
+        <i class="fa-brands fa-pagelines" style="color: #449221;"></i>
+        <span>NATURE FOCUSED</span>
+      </div><br>
+      <div class="feature-item">
+        <i class="fa-solid fa-wand-magic-sparkles" style="color: orange;"></i>
+        <span>MODERN WELLNESS</span>
+      </div><br>
+      <div class="feature-item">
+        <i class="fa-solid fa-microscope" style="color: rgb(76, 76, 209);"></i>
+        <span>CLEAN & ORGANIC</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Footer Content Grid -->
+  <div class="footer-sections">
+    <!-- Quick Links -->
+    <div class="footer-links">
+      <h3>Quick Links</h3>
+      <ul>
+        <li><a href="#" class="active">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="contacts.html">Contact Now</a></li>
+      </ul>
+    </div>
+
+    <!-- Expertise/Services -->
+    <div class="footer-links">
+      <h3>Our Expertise</h3>
+      <ul>
+        <li><a href="services.html#bridal">Bridal Makeup</a></li>
+        <li><a href="services.html#facials">Facials</a></li>
+        <li><a href="services.html#hair">Hair Spa</a></li>
+        <li><a href="services.html#oil">Boutique</a></li>
+      </ul>
+    </div>
+
+    <!-- Contact Details & Hours -->
+    <div class="footer-links contact-info">
+      <h3>Contact Us</h3>
+      <ul>
+        <li><i class="fa-solid fa-location-dot"></i> 123 Wellness Blvd, Suite 100</li>
+        <li><i class="fa-solid fa-phone"></i> +1 (555) 019-2834</li>
+        <li><i class="fa-solid fa-envelope"></i> hello@esbloom.com</li>
+      </ul>
+      </div>
+      <div>
+      <h3 class="hours-title">Hours</h3>
+      <p class="hours-text">Mon - Sat: 9:00 AM - 7:00 PM<br>Sun: Closed</p>
+    </div>
+
+   
+
+  <!-- Footer Bottom -->
+  <div class="footer-bottom">
+    <div class="footer-legal">
+      <p><i class="fa-regular fa-copyright"></i> All Rights Reserved @2026 E S BLOOM</p>
+      <div class="legal-links">
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="terms.html">Terms of Service</a>
+      </div>
+    </div>
+    <div class="footer-socials">
+      <a href="https://instagram.com" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+      <a href="https://facebook.com" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a>
+      <a href="https://twitter.com" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
+      <a href="https://linkedin.com" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+    </div>
+  </div>
+</footer>
+ 
+       <script>
+    document.addEventListener("DOMContentLoaded", function() {
+  const menuToggle = document.getElementById("menuToggle");
+  const navLinks = document.getElementById("navLinks");
+
+  menuToggle.addEventListener("click", function() {
+    // Toggles the visibility of the link wrapper element
+    navLinks.classList.toggle("show");
+    
+    // Toggles the modern 'X' close visual transition on the icon lines
+    menuToggle.classList.toggle("open");
+  });
+});
+</script>
+ </body>
+ </html>

@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ES parlour</title>
+    <link rel="stylesheet" href="style.css">
+     <script src="https://kit.fontawesome.com/67333c175b.js" crossorigin="anonymous"></script>
+      <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@14.0.1/swiper-bundle.min.css"
+    />
+      
+</head>
+<body>
+  
+ <section class="header">
+<nav class="navbar">
+  <!-- Logo Container -->
+  <div class="logo-area">
+    <img src="E S Bloom logo.jpeg" width="50px" height="50px" alt="E S Bloom Logo">
+  </div>
+<div>
+  <!-- Mobile Hamburger Button -->
+  <button class="menu-toggle" id="menuToggle" aria-label="Open Navigation Menu">
+    <span class="bar"></span>
+    <span class="bar"></span>
+    <span class="bar"></span>
+  </button>
+  </div>
+
+  <!-- Navigation Links -->
+  <div class="links" id="navLinks">
+    <p><a href="#" class="active">Home</a></p>
+    <p><a href="about.html">About us</a></p>
+    <p><a href="services.html">services</a></p>
+    <p><a href="contacts.html">contact now</a></p>
+  </div>
+</nav>
+<style>
+  /* --- Global Reset & Base Navbar Style --- */
+
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #ffffff;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  position: relative;
+  z-index: 1000;
+  gap: 410px;
+}
+
+/* --- Mobile Menu Toggle Button (Hamburger) --- */
+.menu-toggle {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 25px;
+  height: 20px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.menu-toggle .bar {
+  width: 100%;
+  height: 3px;
+  background-color: #333333; /* Color of your choice */
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+/* --- Mobile view Layout (Under 768px Screen Width) --- */
+@media (max-width: 767px) {
+  .links {
+    display: none; /* Initially hidden on mobile screen */
+    flex-direction: column;
+    width: 100%;
+    position:absolute;
+    top: 100%; /* Sits exactly below the main navigation bar header */
+    left: 5px;
+    background-color: #a01474;
+    box-shadow:  rgba(0, 0, 0, 0.08);
+  
+  }
+  .navbar{
+    gap: 350px;
+  }
+
+  /* Target paragraphs inside the mobile drop menu */
+  .links p {
+    margin: 0;
+    width: 100%;
+  }
+
+  .links a {
+    display: block;
+    padding: 15px 25px;
+    text-decoration: none;
+    color: white;
+    border-bottom: 1px solid #f5f5f5;
+    text-align: center;
+  }
+
+ 
+
+  /* The active toggle state that displays the menu */
+  .links.show {
+    display: flex;
+  }
+
+  /* Optional: Animation transforms hamburger lines into an 'X' close graphic */
+  .menu-toggle.open .bar:nth-child(1) {
+    transform: translateY(8.5px) rotate(45deg);
+  }
+  .menu-toggle.open .bar:nth-child(2) {
+    opacity: 0;
+  }
+  .menu-toggle.open .bar:nth-child(3) {
+    transform: translateY(-8.5px) rotate(-45deg);
+  }
+}
+
+/* --- Laptop / Desktop Responsive Layout (768px and up) --- */
+@media (min-width: 768px) {
+  .menu-toggle {
+    display: none; /* Hide the burger toggle on desktop screens */
+  }
+
+  .links {
+    display: flex !important; /* Forces link container horizontal flex display */
+    flex-direction: row;
+    gap: 20px;
+  }
+
+  .links p {
+    margin: 0;
+  }
+
+  .links a {
+    text-decoration: none;
+  
+  }
+}
+
+</style>
+ </section>
+<section class="hero-section" style=" background-color:#fcf9f660;">
+  <div class="hero-content">
+    <h1 class="hero-title">
+      Beauty is <span class="hero-subtitle">Beyond Limits</span>
+    </h1>
+    <p class="hero-tagline" style="color: black;">Self-care isn't selfish. Take a deep breath, and let us pamper you.</p>
+    <div class="hero-actions">
+      <a href="services.html" class="hero-btn">
+        Explore Now <i class="fa-solid fa-arrow-right"></i>
+      </a>
+    </div>
+  </div>
+</section>
+<style>
+    /* Hero Container Settings */
+.hero-section {
+  background-color: #d3ccd039; /* Dark premium background tint if text contrast is needed */
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  padding: 40px 20px;
+}
+
+.hero-content {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  padding-left: 80px; /* Maintains your signature left alignment offset */
+}
+
+/* Fluid Typography (Scales perfectly down for mobile screens) */
+.hero-title {
+  color: rgb(140, 2, 87);
+  font-size: clamp(3.5rem, 8vw, 7rem); /* Smooth scaling between mobile and desktop */
+  font-weight: 800;
+  line-height: 1.1;
+  margin: 0;
+}
+
+.hero-subtitle {
+  display: block; /* Forces "Beyond Limits" gracefully onto a clean new line */
+  color: #ffffff;
+  font-size: clamp(2rem, 5vw, 4.5rem);
+  font-weight: 600;
+  margin-top: 10px;
+}
+
+.hero-tagline {
+  color: #f0f0f0;
+  font-size: clamp(1.1rem, 2vw, 1.5rem);
+  line-height: 1.6;
+  max-width: 650px;
+  margin: 30px 0; /* Clean space formatting replacing empty <br> layout hacks */
+}
+
+/* Standalone Clean Link Button Interface */
+.hero-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background-color: rgb(140, 2, 87);
+  color: #ffffff;
+  text-decoration: none;
+  padding: 14px 30px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(140, 2, 87, 0.3);
+}
+
+.hero-btn:hover {
+  background-color: rgb(175, 4, 110);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(140, 2, 87, 0.4);
+}
+
+/* Mobile Breakpoint Adjustment */
+@media (max-width: 768px) {
+  .hero-content {
+    padding-left: 15px; /* Safely removes massive desktop indents on narrow phone windows */
+    text-align: center;
+  }
+  .hero-btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+</style>
+<div class="hero-overlay-card" style=" background-color:#fcf9f660;">
+  <h2 class="overlay-title">
+    Reveal Your <span class="overlay-highlight">Radiant Self</span>
+  </h2>
+  <p class="overlay-text">
+    Premium hair, skin, and bridal treatments tailored just for you. Step into a world of relaxation and modern luxury.
+  </p><br><br>
+</div>
+<style>
+    .hero-overlay-card {
+  /* Premium frosted glass look using your color scheme */
+  background-color: #d3ccd039; 
+  /* Layout and centering */
+  margin: 0 auto;
+  text-align: center;
+}
+
+.overlay-title {
+  color: rgb(140, 2, 87);
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 700;
+  margin: 0 0 20px 0; /* Replaces messy <br> spacing tags */
+  line-height: 1.2;
+}
+
+/* Beautiful contrasting text badge background for "Radiant Self" */
+.overlay-highlight {
+  color: #ffffff;
+  background-color: rgb(140, 2, 87);
+  padding: 2px 12px;
+  border-radius: 6px;
+  display: inline-block;
+  margin-top: 5px;
+}
+
+.overlay-text {
+  color: #333333; /* Darker grey color for perfect legal reading contrast over a light card */
+  font-size: clamp(1rem, 1.5vw, 1.2rem);
+  line-height: 1.6;
+  margin: 0;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+</style>
+    <div class="card-container" style= "background-color:#fcf9f660;  justify-content: center;" >
+        <div class="card-1" style="align-items: center;">
+            <div class="card-front-1">
+                <h4 style="padding: 5px; color:black; border-radius: 8px; background-color:rgba(223, 37, 152, 0.897) ;" >Hair Treatments</h4>
+            </div>
+            <div class="card-back-1">
+            <p style="padding: 5px; color: white;">Tailored shapes designed to match individual face structures.Advanced balayage, ombre, and highlights using damage-free formulas. </p>
+            </div>
+        </div>
+         <div class="card-1">
+            <div class="card-front-2">
+                <h4 style="padding: 5px;  color:black; border-radius: 8px; background-color:rgba(223, 37, 152, 0.897) ;">Advanced Skin Care</h4>
+            </div>
+            <div class="card-back-1">
+            <p style="padding: 5px; color: white;"> Customized routines focusing on hydration, anti-aging, or acne relief.Advanced therapy using modern equipment for instant skin rejuvenation.</p>
+            </div>
+        </div>
+         <div class="card-1">
+            <div class="card-front-3">
+                <h4 style="padding: 5px;color: black;  border-radius: 8px; background-color:rgba(223, 37, 152, 0.897)">Bridal Packages</h4>
+            </div>
+            <div class="card-back-1">
+                <p style="padding: 5px; color:white;">Pre-wedding trials to map out your exact makeup look.Long-lasting, camera-ready techniques for your big day. Complete packages including bridal manicures, pedicures, and body polishing.</p>
+            </div>
+        </div>
+         <div class="card-1">
+            <div class="card-front-4">
+                <h4 style="padding: 5px; color:black; border-radius: 8px; background-color:rgba(223, 37, 152, 0.897)"> Luxury Experience</h4>
+            </div>
+            <div class="card-back-1">
+                <p style="padding: 5px; color: white;" >Calming aromatherapy scents, soft lighting, and peaceful background music. Premium beverage menu offered during your service wait-time.One-on-one time with senior stylists who never rush your process.</p>
+            </div>
+        </div>
+    </div> 
+
+ <section class="welcome-section" style="padding: 60px 20px;  margin: 0 auto; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; color: #2d2d2d; line-height: 1.6;">
+  <div class="welcome-container" style="display: flex; flex-wrap: wrap; gap: 40px; align-items: center;">
+    
+    <!-- Left Side: Text Content Block -->
+    <div class="welcome-text-block" style="flex: 1; min-width: 300px;">
+      <span class="welcome-subtitle" style="font-size: 13px; font-weight: 600; letter-spacing: 2px; color: #8a7355; text-transform: uppercase; display: block; margin-bottom: 12px;">
+        Welcome to the Studio
+      </span>
+      
+      <h2 class="welcome-title" style="font-size: 36px; font-weight: 300; line-height: 1.3; color: #1a1a1a; margin: 0 0 24px 0; letter-spacing: -0.5px;">
+        Where Modern Luxury Meets <br style="@media (min-width: 768px) { display: block; }"><span style="font-weight: 500; color: #8a7355;">Personalized Care</span>
+      </h2>
+      
+      <p class="welcome-desc" style="font-size: 16px; color:black; margin-bottom: 18px;">
+        At <strong>E S Bloom</strong>, we believe true beauty is about feeling completely confident in your own skin. Our team of certified stylists and clinical estheticians combine premium, cruelty-free organic products with cutting-edge techniques.
+      </p>
+      
+      <p class="welcome-desc" style="font-size: 16px; color:black ; margin-bottom: 0;">
+        We reject one-size-fits-all treatments. Every visit is a custom-curated sanctuary escape designed entirely around your unique hair, skin, and wellness goals—leaving you glowing from the inside out.
+      </p>
+    </div>
+
+    <!-- Right Side: Luxury Feature Image Block -->
+    <div class="welcome-image-block" style="flex: 1; min-width: 300px; display: flex; justify-content: center;">
+      <div class="image-wrapper" style="position: relative; width: 100%; max-width: 500px; border-radius: 8px; overflow: hidden; box-shadow: 0 20px 40px rgba(0,0,0,0.08); transition: transform 0.3s ease;">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRawmGxVBQ9U6G_62WLpdEvG5gCXqQKQPyFrbiATOLKOZzaobc8pFzRLxQ&s=10" alt="Our Premium Salon Interior Sanctuary" style="width: 100%; height: auto; display: block; object-fit: cover;">
+      </div>
+    </div>
+
+  </div>
+</section>
+
+     <div class="service">
+        <center>
+        <h1  style="color:rgb(140, 2, 87);">WE   <span style="color: white;">EXPERTISE</span></h1>
+        </center>
+        </div>  
+    <section class="bloom-welcome-section">
+        <div class="bloom-container">
+           
+            
+            <!-- Left Column: Copywriting Blocks -->
+            <div class="bloom-text-col">
+                <span class="bloom-tagline">WELCOME TO E S BLOOM</span>
+                <h2 class="bloom-heading">Your Complete Destination for Luxury & Transformation.</h2>
+                
+                <p class="bloom-paragraph" style="color: black;">
+                    At <strong>E S BLOOM</strong>, our luxury parlour offers a comprehensive, all-in-one beauty experience delivered by a highly trained team of professionals dedicated to hygienic, personalized care. 
+                </p>
+                
+                <p class="bloom-paragraph" style="color: black;">
+                    We specialize in flawless, long-lasting premium <strong>bridal makeup</strong> tailored to enhance your unique features, alongside exquisite traditional and contemporary <strong>mehendi designs</strong> for weddings and festivals. 
+                </p>
+
+                <p class="bloom-paragraph" style="color: black;" >
+                    Our <strong>bespoke boutique</strong> provides custom outfit designing and precise bridal wear tailoring to ensure your perfect fit for any special occasion. To complete your head-to-toe transformation, we offer creative <strong>nail art extensions</strong>, deeply nourishing <strong>hair spa treatments</strong> to restore strength and shine, and advanced <strong>skincare facials</strong> customized for a radiant, glowing complexion.
+                </p>
+
+                <div class="bloom-action-row">
+                    <a href="#services" class="bloom-btn">Explore Our Services</a>
+                </div>
+            </div>
+           <div class="right-column"> 
+    <div
+      style="--swiper-navigation-color: #fff; --swiper-pagination-color: #fff"
+      class="swiper mySwiper"
+    >
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <div class="swiper-zoom-container">
+            <img src="https://t3.ftcdn.net/jpg/03/97/00/46/360_F_397004694_dA9u8WMzFLGXnkiS4I1BzRo7ph9En3sG.jpg" />
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="swiper-zoom-container">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR4xhtsKX80fwYiShaTZqAaUcD4YLOavPKS7ssyDUTm9g&s=10" />
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="swiper-zoom-container">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSCqup_U6q3dVawqpqZT2IkD17u_zTAnNbofQgpKwtS9g&s=10" />
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="swiper-zoom-container">
+            <img src="https://media.istockphoto.com/id/653003428/photo/fashionable-clothes-in-a-boutique-store-in-london.jpg?s=612x612&w=0&k=20&c=UafU4a4xSbepJow4kvNu0q-LD4hFUoli7q3fvwkp79s=" />
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="swiper-zoom-container">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTaLV6oVpC39AWwY5kmn6Ewoj5z3ygHhHsLWYacJuq0GQ&s=10" />
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="swiper-zoom-container">
+            <img src="https://grazia.wwmindia.com/content/2016/nov/moroccan-oil-hair-spa-at-myglamm_gallery_large.jpg" />
+          </div>
+        </div> 
+      </div>
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-pagination"></div>
+    </div>
+    </div> 
+    </div>
+       
+        </section>
+    </div>
+   <section class="promise-section" style="display: flex; flex-wrap: wrap;">
+    <div class="promise-container" style="flex-wrap: wrap; ">
+        
+        <!-- Left Column -->
+        <div class="promise-left" style="flex-wrap: wrap; ">
+            <span class="promise-subtitle">WHY CHOOSE US ?</span>
+            <p class="promise-desc" style="color: #1a1a1a;">At E S BLOOM , we understand that true beauty and wellness require a deeply personal approach, which is why we tailor every hair, skin, and bridal treatment to your unique natural features and goals.</p><br><p class="promise-desc">You are stepping into a haven of modern luxury, where our highly trained, certified professionals combine years of specialized experience with medical-grade sanitization protocols to prioritize your safety and comfort. We are committed to long-term health and radiance, using only premium, dermatologically tested, and cruelty-free products that deliver visible results without compromising on care.</p>
+        </div>
+
+        <!-- Right Column (Timeline List) -->
+        <div class="promise-right" style="flex-wrap: wrap; ">
+            
+            <div class="timeline-item">
+                <div class="timeline-number">I</div>
+                <p class="timeline-text">Expert Team: Certified artists with years of industry training.</p>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-number">II</div>
+                <p class="timeline-text">Premium Products: Strictly cruelty-free and dermatologically tested brands.</p>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-number">III</div>
+                <p class="timeline-text">Hygienic Space: Medical-grade sanitization protocols for your safety.</p>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-number">IV</div>
+                <p class="timeline-text">Tailored Care: Custom consultations before every major treatment.</p>
+            </div>
+
+        </div>
+        
+    </div>
+</section>
+
+ <footer class="site-footer" style="background-color: white;">
+  <!-- Brand and Value Propositions -->
+  <div class="footer-top">
+    <div class="footer-brand">
+      <img src="E S Bloom logo.jpeg" width="50px" height="50px" style="border-radius: 5px;">
+      <p>Nurturing your natural beauty with clean, modern wellness therapies.</p>
+    </div>
+    <div class="footer-features">
+      <div class="feature-item">
+        <i class="fa-brands fa-pagelines" style="color: #449221;"></i>
+        <span>NATURE FOCUSED</span>
+      </div><br>
+      <div class="feature-item">
+        <i class="fa-solid fa-wand-magic-sparkles" style="color: orange;"></i>
+        <span>MODERN WELLNESS</span>
+      </div><br>
+      <div class="feature-item">
+        <i class="fa-solid fa-microscope" style="color: rgb(76, 76, 209);"></i>
+        <span>CLEAN & ORGANIC</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Footer Content Grid -->
+  <div class="footer-sections">
+    <!-- Quick Links -->
+    <div class="footer-links">
+      <h3>Quick Links</h3>
+      <ul>
+        <li><a href="#" class="active">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="contacts.html">Contact Now</a></li>
+      </ul>
+    </div>
+
+    <!-- Expertise/Services -->
+    <div class="footer-links">
+      <h3>Our Expertise</h3>
+      <ul>
+        <li><a href="services.html#bridal">Bridal Makeup</a></li>
+        <li><a href="services.html#facials">Facials</a></li>
+        <li><a href="services.html#hair">Hair Spa</a></li>
+        <li><a href="services.html#oil">Boutique</a></li>
+      </ul>
+    </div>
+
+    <!-- Contact Details & Hours -->
+    <div class="footer-links contact-info">
+      <h3>Contact Us</h3>
+      <ul>
+        <li><i class="fa-solid fa-location-dot"></i> 123 Wellness Blvd, Suite 100</li>
+        <li><i class="fa-solid fa-phone"></i> +1 (555) 019-2834</li>
+        <li><i class="fa-solid fa-envelope"></i> hello@esbloom.com</li>
+      </ul>
+      </div>
+      <div>
+      <h3 class="hours-title">Hours</h3>
+      <p class="hours-text">Mon - Sat: 9:00 AM - 7:00 PM<br>Sun: Closed</p>
+    </div>
+
+   
+
+  <!-- Footer Bottom -->
+  <div class="footer-bottom">
+    <div class="footer-legal">
+      <p><i class="fa-regular fa-copyright"></i> All Rights Reserved @2026 E S BLOOM</p>
+      <div class="legal-links">
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="terms.html">Terms of Service</a>
+      </div>
+    </div>
+    <div class="footer-socials">
+      <a href="https://instagram.com" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+      <a href="https://facebook.com" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a>
+      <a href="https://twitter.com" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
+      <a href="https://linkedin.com" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+    </div>
+  </div>
+</footer>
+
+            <script src="https://cdn.jsdelivr.net/npm/swiper@14.0.1/swiper-bundle.min.js"></script>
+
+    <!-- Initialize Swiper -->
+    <script>
+      var swiper = new Swiper('.mySwiper', {
+        zoom: true,
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+        },
+        pagination: {
+          el: '.swiper-pagination',
+          clickable: true,
+        },
+      });
+    </script>
+    <script>
+    document.addEventListener("DOMContentLoaded", function() {
+  const menuToggle = document.getElementById("menuToggle");
+  const navLinks = document.getElementById("navLinks");
+
+  menuToggle.addEventListener("click", function() {
+    // Toggles the visibility of the link wrapper element
+    navLinks.classList.toggle("show");
+    
+    // Toggles the modern 'X' close visual transition on the icon lines
+    menuToggle.classList.toggle("open");
+  });
+});
+</script>
+            
+    </body>
+    </html>

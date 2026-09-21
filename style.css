@@ -5,7 +5,7 @@
 }
 
 body {
-    font-family: 'Georgia', serif;
+    font-family: 'Helvetica Neue ', Helvetica, Arial, sans-serif;
     color: black;
     line-height: 1.6;
     overflow-x: hidden;
@@ -330,7 +330,7 @@ body {
 /* Master Layout Wrapper Container */
 .bloom-welcome-section {
     width: 100%;
-    padding: 100px 4%; /* Generous breathing room top/bottom and responsive padding sides */
+    padding:  4%; /* Generous breathing room top/bottom and responsive padding sides */
     display: flex;
     justify-content: center;
     background-color: #fcf9f660; /* Warm, ultra-premium soft cream salon theme backdrop */
@@ -372,7 +372,7 @@ body {
     color: #4a4a4a;
     font-size: 1.05rem;
     line-height: 1.7;
-    margin-bottom: 18px; /* Balanced spacing distribution between long content elements */
+    margin-bottom: 10px; /* Balanced spacing distribution between long content elements */
 }
 
 /* Soft typographic hierarchy focus treatment */

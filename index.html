@@ -121,6 +121,9 @@
   .menu-toggle.open .bar:nth-child(3) {
     transform: translateY(-8.5px) rotate(-45deg);
   }
+  .welcome-desc{
+    font-size: 16px;
+  }
 }
 
 /* --- Laptop / Desktop Responsive Layout (768px and up) --- */
@@ -330,11 +333,11 @@
         Where Modern Luxury Meets <br style="@media (min-width: 768px) { display: block; }"><span style="font-weight: 500; color: #8a7355;">Personalized Care</span>
       </h2>
       
-      <p class="welcome-desc" style="font-size: 20px; color:black; margin-bottom: 18px;font-family:serif;font-style: oblique;">
+      <p class="welcome-desc">
         At <strong>E S Bloom</strong>, we believe true beauty is about feeling completely confident in your own skin. Our team of certified stylists and clinical estheticians combine premium, cruelty-free organic products with cutting-edge techniques.
-      </p>
+      </p><br>
       
-      <p class="welcome-desc" style="font-size: 20px; color:black ; margin-bottom: 0;font-family:serif;font-style: oblique;">
+      <p class="welcome-desc">
         We reject one-size-fits-all treatments. Every visit is a custom-curated sanctuary escape designed entirely around your unique hair, skin, and wellness goals—leaving you glowing from the inside out.
       </p>
     </div>
@@ -347,14 +350,22 @@
     </div>
 
   </div>
-</section>
-<style>
-  @media (max-width:768px){
-    .welcome-desc p{
-      font-size: 16px;
+  <style>
+    .welcome-desc{
+      font-size: 20px; 
+      color:black ; 
+      margin-bottom: 0;
+      font-family:serif;
+      font-style: oblique;
     }
-  }
-</style>
+    @media (max-width:768px){
+      .welcome-desc{
+        font-size: 16px;
+      }
+    }
+  </style>
+</section>
+
 
      <div class="service">
         <center>

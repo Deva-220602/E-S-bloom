@@ -12,7 +12,7 @@
 <nav class="navbar">
   <!-- Logo Container -->
   <div class="logo-area">
-    <img src="New-IMAGE (1).png" width="75px" height="75px" alt="E S Bloom Logo">
+    <img src="cropped_circle_image.png" width="75px" height="75px" alt="E S Bloom Logo">
   </div>
 <div>
   <!-- Mobile Hamburger Button -->
@@ -134,36 +134,185 @@
 
   .links a {
     text-decoration: none;
-    color: #333333;
+    color:black;
   }
 }
 
 </style>
- </section><br><br>
+ </section>
         <center>
-        <section class="contacts">
+        <section class="contacts" style="background-color: #fcf9f660;padding-top: 25px;">
             <div class="intro">
                 <h1>Let's Plan Your Escape</h1>
-                <p>"Have a question about a treatment or ready to reserve your chair? Reach out today—our team is here to assist you."</p>
+                <p >"Have a question about a treatment or ready to reserve your chair? Reach out today—our team is here to assist you."</p>
+            </div><br>
+        </section>
+       <section class="services-container">
+        
+        <!-- Features Grid Layout -->
+        <div class="features-grid">
+            
+            <!-- Feature Item 1 -->
+            <div class="feature-card">
+                <h4>call us 📞</h4>
+                <a href="tel:+916381365709" style="text-decoration: none;"><p style="color: black;font-family: serif;font-style: oblique;font-size: 18px;text-decoration: none;">+91 6381365709</p></a>
             </div>
-        </section><br><br>
-        <section class="core-info">
-            <div class="inform">
-                <h2>Location</h2>
-                <p>xyz,district,state,india</p><br><br><br><br>
-                <h2>contact</h2>
-                <p>ph:+910987654321</p><br><br><br><br>
-                <h2>E-mail</h2>
-                <p>esbloom@gmail.com</p>
+
+            <!-- Feature Item 2 -->
+            <div class="feature-card">
+                <h4>Location 📌</h4>
+                <p style="color: black;font-family: serif;font-style: oblique;font-size: 18px;">Sr.no.70,Devamma niwas,Datta nagar,Brahma dattray colony,near Ganesh heights,Dehu road,412101.</p>
             </div>
-            </center>
-        </section><br><br>
+
+            <!-- Feature Item 3 -->
+            <div class="feature-card">
+                <h4>Whatsapp us <i class="fa-brands fa-whatsapp" style="color: green;"></i></h4>
+               <a href="https://wa.me/916381365709" style="text-decoration: none;"><p style="color: black;font-family: serif;font-style: oblique;font-size: 18px;">Chat us </p></a>
+            </div>
+
+        </div>
+
+    </section>
+     <style>
+
+        .services-container {
+            width: 100%;
+            margin: 0 auto;
+            background:#fcf9f660;
+            padding: 40px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+        }
+
+        /* --- Typography Styles --- */
+        .section-title {
+            font-size: 2.2rem;
+            color: #6b1d2f; /* Deep Elegant Maroon */
+            text-align: center;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+        }
+
+        .section-title span {
+            font-size: 1.8rem;
+            vertical-align: middle;
+        }
+
+        .service-heading {
+            font-size: 1.8rem;
+            color: #8a253e;
+            text-align: center;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .service-intro {
+            font-size: 1.1rem;
+            color: #555555;
+            text-align: center;
+            max-width: 750px;
+            margin: 0 auto 35px auto;
+        }
+
+        /* --- Grid Structure for Features --- */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        /* --- Card Styles --- */
+        .feature-card {
+            background: #fffcfb;
+            border-left: 4px solid #d4af37; /* Elegant Bridal Gold Accent */
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.02);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(107, 29, 47, 0.1);
+        }
+
+        .feature-card h4 {
+            font-size: 1.25rem;
+            color: #6b1d2f;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .feature-card p {
+            font-size: 0.95rem;
+            color: #666666;
+        }
+
+        /* --- Responsive Viewports --- */
+        @media (max-width: 600px) {
+            
+            .services-container {
+                padding: 20px;
+            }
+            .section-title {
+                font-size: 1.8rem;
+            }
+            .service-heading {
+                font-size: 1.4rem;
+            }
+        }
+    </style>
+    <div class="map-container" style="background-color: #fcf9f660;">
+        <!-- Paste your copied iframe here -->
+        
+          <iframe src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d3896586.5562620233!2d73.64411086626421!3d17.49508302845625!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1ssr.no.70%2Cdevamma%20niwas%20%2Cdatta%20nagar%2Cbrahma%20dattray%20colony%2Cdehu%20road%2C%20pune!5e0!3m2!1sen!2sin!4v1790072704380!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe> 
+
+    </div>
+    <style>
+    /* Container for the map */
+.map-container {
+  background-color:#fcf9f660 ;        /* Limits map width on desktop devices */
+    width: 100%;             /* Fits fully inside smaller containers */
+    margin: auto;       /* Centers the container horizontally */
+    border-radius: 12px;     /* Rounds the corners of the frame */
+    overflow: hidden;        /* Keeps the map within the rounded borders */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15); /* Adds a modern drop shadow */
+}
+
+/* Styling the iframe itself */
+.map-container iframe {
+    width: 100%;             /* Forces the map to fill the container width */
+    height: 450px;           /* Sets the preferred desktop height */
+    display: block;          /* Eliminates baseline structural spacing gaps */
+}
+
+/* Optional: Adjust height for small screens (Mobile optimization) */
+@media (max-width: 600px) {
+    .map-container iframe {
+        height: 300px;       /* Shorter height format for narrow screens */
+    }
+}
+</style><br>
+<style>
+  @media (max-width: 768px) {
+    .foot {
+      text-align: center;
+      
+    }
+    .hours-title{
+      text-align: center;
+    }
+    .foot ul{
+      margin:15px;
+    }
+  }
+</style>
 
          <footer class="site-footer" style="background-color: white;">
   <!-- Brand and Value Propositions -->
   <div class="footer-top">
     <div class="footer-brand">
-      <img src="New-IMAGE (1).png " width="50px" height="50px" style="border-radius: 5px;">
+      <img src="cropped_circle_image.png" width="50px" height="50px" style="border-radius: 5px;">
       <p>Nurturing your natural beauty with clean, modern wellness therapies.</p>
     </div>
     <div class="footer-features">
@@ -217,7 +366,7 @@
       </div>
       <div>
       <h3 class="hours-title">Hours</h3>
-      <p class="hours-text">Mon - Sat: 9:00 AM - 7:00 PM<br>Sun: Closed</p>
+      <p class="hours-text">Mon - Sat: 11:00 AM - 9:00 PM<br>Sun: Closed</p>
     </div>
 
    

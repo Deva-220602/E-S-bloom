@@ -73,20 +73,21 @@
 }
 
 /* --- Mobile view Layout (Under 768px Screen Width) --- */
-@media (max-width: 767px) {
+@media (max-width: 768px) {
   .links {
     display: none; /* Initially hidden on mobile screen */
     flex-direction: column;
     width: 100%;
     position:absolute;
     top: 100%; /* Sits exactly below the main navigation bar header */
-    left: 5px;
+    left: 0;
     background-color: #a01474;
     box-shadow:  rgba(0, 0, 0, 0.08);
   
   }
   .navbar{
-    gap: 230px;
+    width: 100%;
+    justify-content: space-around;
   }
  
 
@@ -240,7 +241,7 @@
   <h2 class="overlay-title">
     Reveal Your <span class="overlay-highlight">Radiant Self</span>
   </h2>
-  <p class="overlay-text">
+  <p class="overlay-text" style="font-family:cursive;color:black; ">
     Premium hair, skin, and bridal treatments tailored just for you. Step into a world of relaxation and modern luxury.
   </p><br><br>
 </div>
@@ -463,6 +464,9 @@
     }
     .hours-title{
       text-align: center;
+    }
+    .foot ul{
+      margin:15px;
     }
   }
 </style>

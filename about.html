@@ -273,13 +273,13 @@
         <!-- Text Column --> 
         <div class="about-text-content"> 
             <h1 class="about-title">About Us</h1> 
-            <p class="about-description" style="color: black;font-family: serif;font-style: oblique;font-size: 20px;">
+            <p class="about-description" >
                 At E S BLOOM, we believe hair and skin care are not just routines—they are forms of personal art. 
                 Founded as a premium sanctuary for those who value detail, our salon blends advanced modern 
                 techniques with timeless luxury. We specialize in bespoke hair color, advanced skin treatments, 
                 and breathtaking bridal transformations designed specifically for your unique style.
             </p> 
-            <p class="about-description"  style="color: black;font-family: serif;font-style: oblique;font-size: 20px;">
+            <p class="about-description" >
                 We invite you to step away from the noise of the outside world and enter a space engineered 
                 entirely for your relaxation. From our curated botanical treatments to our master stylists, 
                 every element of your visit is crafted to elevate your confidence and restore your spirit. 
@@ -299,6 +299,18 @@
                 margin-top: 50px;
             }
         }
+        .about-description{
+             color:black;
+            font-family: serif;
+            font-style: oblique;
+            font-size: 20px;
+          }
+           @media (max-width:768px){
+      .about-description{
+        font-size: 16px;
+      }
+    }
+        
     </style>
 </section>
     <style>
@@ -440,10 +452,24 @@
         <!-- Left Content Column -->
         <div class="core-content"> 
             <div class="philosophy-text">
-                <p class="highlight-p" style="font-family: serif;font-style: oblique;font-size: 20px;"><strong style="color: black;">Our Philosophy</strong><br><br>At E S BLOOM, we believe premium beauty requires an uncompromising standard. We merge advanced, non-invasive clinical treatments with conscious, ethical luxury to provide an elevated self-care experience. Every product we choose for your skin and hair is rigorously vetted to ensure it is safe, cruelty-free, and highly effective.</p>
-                <p class="highlight-p" style="font-family: serif;font-style: oblique;font-size: 20px;"><strong style="color: black;">Continuous Innovation</strong><br><br>Our team stays at the cutting edge of the beauty industry through continuous education. We consistently master modern hair styling, advanced skincare, and high-definition bridal techniques to bring you the best global trends.</p>
+                <p class="highlight-p" ><strong style="color: black;">Our Philosophy</strong><br><br>At E S BLOOM, we believe premium beauty requires an uncompromising standard. We merge advanced, non-invasive clinical treatments with conscious, ethical luxury to provide an elevated self-care experience. Every product we choose for your skin and hair is rigorously vetted to ensure it is safe, cruelty-free, and highly effective.</p>
+                <p class="highlight-p"><strong style="color: black;">Continuous Innovation</strong><br><br>Our team stays at the cutting edge of the beauty industry through continuous education. We consistently master modern hair styling, advanced skincare, and high-definition bridal techniques to bring you the best global trends.</p>
             </div>
         </div>
+        <style>
+            .highlight-p{
+             color:white;
+            font-family: serif;
+            font-style: oblique;
+            font-size: 20px;
+          }
+           @media (max-width:768px){
+      .highlight-p{
+        font-size: 16px;
+      }
+    }
+
+        </style>
 
         <!-- Right Grid Column -->
         <div class="core-grid">
@@ -1154,7 +1180,7 @@
             </div>
         </div>
         </section><br><br>
-        <style>
+<style>
   @media (max-width: 768px) {
     .foot {
       text-align: center;
@@ -1169,7 +1195,8 @@
   }
 </style>
 
-     <footer class="site-footer" style="background-color: white;">
+ <footer class="site-footer" style="background-color: white;">
+  <div class="foot">
   <!-- Brand and Value Propositions -->
   <div class="footer-top">
     <div class="footer-brand">
@@ -1217,10 +1244,13 @@
     </div>
 
     <!-- Contact Details & Hours -->
-  
+    
+
       <div>
       <h3 class="hours-title">Hours</h3>
-      <p class="hours-text">Mon - Sat: 11:00 AM - 8:00 PM<br>Sun: Closed</p>
+      <ul>
+       <li class="hours-text">Mon - Sat: 11:00AM - 8:00 PM<br>Sun: Closed</li>
+      </ul>
     </div>
 
    
@@ -1240,6 +1270,7 @@
       <a href="https://twitter.com" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
       <a href="https://linkedin.com" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
     </div>
+  </div>
   </div>
 </footer>
  

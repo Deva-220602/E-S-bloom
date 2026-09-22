@@ -305,7 +305,7 @@ body {
 /* --- RESPONSIBLE DESIGN MEDIA ADAPTATIONS FOR SMARTPHONES --- */
 @media (max-width: 992px) {
     .welcome-container {
-        flex-direction: column-reverse; /* Pushes image gracefully above or below text on small pads */
+        flex-direction: column; /* Pushes image gracefully above or below text on small pads */
         gap: 50px;
         text-align: center;
     }
@@ -527,7 +527,6 @@ body {
 
 .timeline-text {
     color:black;
-    font-size: 20px;
     line-height: 1.6;
 }
 
